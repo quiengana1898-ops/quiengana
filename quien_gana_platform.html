@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quién Gana — Una plataforma investigativa de Boricuas Antifascistas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,900&family=Manrope:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --celeste: #6BAACF;
+    --celeste-deep: #4A8FB8;
+    --celeste-pale: #DCECF5;
+    --celeste-mist: #EFF6FA;
+    --rojo: #CE2029;
+    --rojo-deep: #9A1620;
+    --rojo-pale: #F8E2E4;
+    --cream: #FAF7EF;
+    --cream-deep: #F3EEE2;
+    --ink: #0F1419;
+    --ink-muted: rgba(15, 20, 25, 0.62);
+    --ink-faint: rgba(15, 20, 25, 0.4);
+    --ink-line: rgba(15, 20, 25, 0.12);
+    --ink-line-strong: rgba(15, 20, 25, 0.22);
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-body: 'Manrope', -apple-system, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--font-body);
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--celeste); color: var(--ink); }
+
+  /* Flag bar */
+  .flag-bar {
+    height: 6px;
+    background: linear-gradient(to right,
+      var(--rojo) 0%, var(--rojo) 20%,
+      var(--cream) 20%, var(--cream) 40%,
+      var(--rojo) 40%, var(--rojo) 60%,
+      var(--cream) 60%, var(--cream) 80%,
+      var(--rojo) 80%, var(--rojo) 100%);
+  }
+
+  /* Header */
+  header {
+    background: rgba(250, 247, 239, 0.92);
+    border-bottom: 1px solid var(--ink-line);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(8px);
+  }
+  .header-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  .brand-mark {
+    width: 38px;
+    height: 38px;
+    background: var(--celeste);
+    position: relative;
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+  }
+  .brand-mark::after {
+    content: '';
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid var(--cream);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  }
+  .brand-text { display: flex; flex-direction: column; }
+  .brand-name {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    font-style: italic;
+  }
+  .brand-sub {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--ink-muted);
+    margin-top: 4px;
+  }
+  nav.top-nav { display: flex; gap: 24px; font-size: 13px; align-items: center; }
+  nav.top-nav a {
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 4px 0;
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.2s;
+  }
+  nav.top-nav a:hover { border-bottom-color: var(--rojo); }
+
+  .lang-toggle {
+    display: flex;
+    border: 1px solid var(--ink-line-strong);
+    border-radius: 2px;
+    overflow: hidden;
+    font-family: var(--font-mono);
+  }
+  .lang-toggle button {
+    background: transparent;
+    border: none;
+    padding: 6px 10px;
+    font-size: 11px;
+    font-family: var(--font-mono);
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    color: var(--ink-muted);
+    transition: all 0.15s;
+  }
+  .lang-toggle button.active {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .lang-toggle button:hover:not(.active) { background: var(--cream-deep); color: var(--ink); }
+
+  /* Hero — platform manifesto */
+  .hero {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 80px 32px 40px;
+    position: relative;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    width: 320px;
+    height: 320px;
+    background: var(--celeste);
+    opacity: 0.16;
+    border-radius: 50%;
+    filter: blur(100px);
+    pointer-events: none;
+  }
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--rojo);
+    font-weight: 600;
+    margin-bottom: 28px;
+  }
+  .eyebrow::before {
+    content: '';
+    width: 24px;
+    height: 1.5px;
+    background: var(--rojo);
+  }
+  h1.hero-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(48px, 6.5vw, 88px);
+    line-height: 0.98;
+    letter-spacing: -0.04em;
+    margin-bottom: 32px;
+    max-width: 1100px;
+  }
+  h1.hero-title em {
+    font-style: italic;
+    color: var(--rojo);
+  }
+  h1.hero-title .accent {
+    color: var(--celeste-deep);
+    font-style: italic;
+  }
+  .hero-lede {
+    font-size: 19px;
+    line-height: 1.55;
+    color: var(--ink-muted);
+    max-width: 720px;
+    margin-bottom: 40px;
+  }
+  .hero-lede strong { color: var(--ink); font-weight: 600; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+  .btn-primary, .btn-secondary {
+    padding: 16px 28px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    border-radius: 2px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.15s;
+    border: none;
+  }
+  .btn-primary {
+    background: var(--rojo);
+    color: var(--cream);
+  }
+  .btn-primary:hover { background: var(--rojo-deep); }
+  .btn-secondary {
+    background: transparent;
+    color: var(--ink);
+    border: 1.5px solid var(--ink);
+  }
+  .btn-secondary:hover { background: var(--ink); color: var(--cream); }
+  .btn-arrow { font-size: 16px; }
+
+  /* The Circuit — diagrammatic thesis */
+  .thesis {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 80px 32px;
+    overflow: hidden;
+    position: relative;
+  }
+  .thesis-inner { max-width: 1240px; margin: 0 auto; position: relative; }
+  .thesis-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .thesis-label {
+    color: var(--celeste);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .thesis-label::before {
+    content: '';
+    width: 24px;
+    height: 1.5px;
+    background: var(--celeste);
+  }
+  .thesis h2 {
+    font-family: var(--font-display);
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    margin-bottom: 28px;
+  }
+  .thesis h2 em { font-style: italic; color: var(--celeste); }
+  .thesis-body {
+    font-size: 16px;
+    line-height: 1.7;
+    color: rgba(250, 247, 239, 0.78);
+  }
+  .thesis-body p { margin-bottom: 16px; }
+  .thesis-body strong { color: var(--cream); font-weight: 600; }
+  .thesis-quote {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.4;
+    color: var(--celeste);
+    margin-top: 28px;
+    padding-left: 20px;
+    border-left: 3px solid var(--rojo);
+  }
+
+  /* Circuit diagram */
+  .circuit-diagram {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+  .circuit-diagram svg { width: 100%; height: 100%; }
+
+  /* Sections base */
+  section.std {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 100px 32px;
+    position: relative;
+  }
+  .section-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 60px;
+    gap: 40px;
+  }
+  .section-head-text { max-width: 720px; }
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--rojo);
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .section-label::before {
+    content: attr(data-num);
+    color: var(--ink-faint);
+    font-weight: 500;
+  }
+  h2.section-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(36px, 4.5vw, 56px);
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    margin-bottom: 18px;
+  }
+  h2.section-title em { font-style: italic; color: var(--celeste-deep); }
+  .section-intro {
+    font-size: 16px;
+    color: var(--ink-muted);
+    line-height: 1.65;
+    max-width: 620px;
+  }
+  .section-side {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    text-align: right;
+    line-height: 1.7;
+    flex-shrink: 0;
+  }
+
+  /* Circuit cards grid */
+  .circuits {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--ink-line);
+    border: 1px solid var(--ink-line);
+  }
+  .circuit-card {
+    background: var(--cream);
+    padding: 32px;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    min-height: 320px;
+    position: relative;
+    overflow: hidden;
+  }
+  .circuit-card:hover { background: var(--celeste-mist); }
+  .circuit-card.featured {
+    background: var(--ink);
+    color: var(--cream);
+    grid-column: span 2;
+  }
+  .circuit-card.featured:hover { background: #1a2228; }
+
+  .circuit-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .circuit-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: var(--rojo);
+    font-weight: 600;
+  }
+  .circuit-card.featured .circuit-num { color: var(--celeste); }
+  .circuit-status {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 3px 8px;
+    border-radius: 2px;
+    font-weight: 500;
+  }
+  .status-live {
+    background: var(--rojo-pale);
+    color: var(--rojo-deep);
+  }
+  .status-building {
+    background: var(--celeste-pale);
+    color: var(--celeste-deep);
+  }
+  .status-research {
+    background: var(--cream-deep);
+    color: var(--ink-muted);
+  }
+  .status-urgent {
+    background: var(--rojo);
+    color: var(--cream);
+  }
+  .circuit-card.featured .status-live {
+    background: rgba(206, 32, 41, 0.2);
+    color: var(--cream);
+  }
+
+  .circuit-icon {
+    width: 44px;
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--rojo);
+  }
+  .circuit-card.featured .circuit-icon { color: var(--celeste); }
+  .circuit-icon svg { width: 100%; height: 100%; }
+
+  .circuit-title {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 26px;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+  }
+  .circuit-card.featured .circuit-title { font-size: 36px; }
+  .circuit-title-es {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--ink-muted);
+    margin-top: 4px;
+  }
+  .circuit-card.featured .circuit-title-es { color: rgba(250, 247, 239, 0.6); font-size: 16px; }
+
+  .circuit-mechanism {
+    font-size: 14px;
+    line-height: 1.55;
+    color: var(--ink-muted);
+    flex: 1;
+  }
+  .circuit-card.featured .circuit-mechanism {
+    color: rgba(250, 247, 239, 0.75);
+    font-size: 16px;
+  }
+
+  .circuit-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid var(--ink-line);
+    padding-top: 16px;
+    margin-top: auto;
+  }
+  .circuit-card.featured .circuit-meta { border-top-color: rgba(250, 247, 239, 0.15); }
+  .circuit-stat {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+  }
+  .circuit-card.featured .circuit-stat { color: var(--celeste); font-size: 32px; }
+  .circuit-stat-label {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin-top: 2px;
+  }
+  .circuit-card.featured .circuit-stat-label { color: rgba(250, 247, 239, 0.5); }
+  .circuit-cta {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink);
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: gap 0.2s;
+  }
+  .circuit-card.featured .circuit-cta { color: var(--cream); }
+  .circuit-card:hover .circuit-cta { gap: 12px; }
+
+  /* Featured deep-dive embed */
+  .deep-dive {
+    background: var(--celeste-mist);
+    border-top: 1px solid var(--ink-line);
+    border-bottom: 1px solid var(--ink-line);
+  }
+  .deep-dive-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    padding: 100px 32px;
+  }
+  .deep-dive-shell {
+    background: var(--cream);
+    border: 1px solid var(--ink-line-strong);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  .deep-dive-header {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 24px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .deep-dive-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .deep-dive-num {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    color: var(--celeste);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+  .deep-dive-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    letter-spacing: -0.01em;
+  }
+  .deep-dive-body { padding: 36px; }
+  .lookup-row { display: flex; gap: 12px; margin-bottom: 20px; }
+  .lookup-input {
+    flex: 1;
+    background: var(--cream-deep);
+    border: 1.5px solid var(--ink-line);
+    border-radius: 2px;
+    padding: 14px 18px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .lookup-input:focus { outline: none; border-color: var(--ink); }
+  .lookup-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .chip {
+    background: transparent;
+    border: 1px solid var(--ink-line-strong);
+    color: var(--ink-muted);
+    padding: 6px 14px;
+    font-size: 11px;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all 0.15s;
+  }
+  .chip:hover { border-color: var(--ink); color: var(--ink); }
+  .chip.active { background: var(--ink); color: var(--cream); border-color: var(--ink); }
+
+  .lookup-results {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--ink-line);
+    border: 1px solid var(--ink-line);
+  }
+  .lookup-card {
+    background: var(--cream);
+    padding: 20px;
+    transition: background 0.2s;
+  }
+  .lookup-card:hover { background: var(--celeste-mist); }
+  .lookup-card.featured {
+    background: var(--ink);
+    color: var(--cream);
+  }
+  .lookup-card.featured:hover { background: #1a2228; }
+  .lookup-state {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--rojo);
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .lookup-card.featured .lookup-state { color: var(--celeste); }
+  .lookup-name {
+    font-family: var(--font-display);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+  .lookup-amount {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+  }
+  .lookup-via {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin-top: 4px;
+  }
+  .lookup-card.featured .lookup-via { color: rgba(250, 247, 239, 0.5); }
+
+  /* Infrastructure section */
+  .infra {
+    background: var(--cream-deep);
+    border-top: 1px solid var(--ink-line);
+  }
+  .infra-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--ink-line);
+    border: 1px solid var(--ink-line);
+  }
+  .infra-card {
+    background: var(--cream);
+    padding: 40px;
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+    min-height: 200px;
+  }
+  .infra-card-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--ink);
+    color: var(--celeste);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .infra-card-icon svg { width: 28px; height: 28px; }
+  .infra-card-content { flex: 1; }
+  .infra-card h3 {
+    font-family: var(--font-display);
+    font-size: 24px;
+    font-weight: 500;
+    letter-spacing: -0.015em;
+    margin-bottom: 4px;
+  }
+  .infra-card .infra-es {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-weight: 400;
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin-bottom: 12px;
+  }
+  .infra-card p {
+    font-size: 14px;
+    color: var(--ink-muted);
+    line-height: 1.6;
+  }
+
+  /* About BA */
+  .about {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 100px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .about::before {
+    content: '';
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 380px;
+    height: 380px;
+    background: var(--rojo);
+    opacity: 0.14;
+    border-radius: 50%;
+    filter: blur(80px);
+  }
+  .about-inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.3fr;
+    gap: 80px;
+    position: relative;
+    align-items: start;
+  }
+  .about-label {
+    font-family: var(--font-mono);
+    color: var(--celeste);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .about-label::before { content: ''; width: 24px; height: 1.5px; background: var(--celeste); }
+  .about h2 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4.5vw, 56px);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+  }
+  .about h2 em { font-style: italic; color: var(--celeste); }
+  .about-body { font-size: 16px; line-height: 1.75; color: rgba(250, 247, 239, 0.8); }
+  .about-body p { margin-bottom: 18px; }
+  .about-body strong { color: var(--cream); font-weight: 600; }
+  .about-principles {
+    margin-top: 32px;
+    padding-top: 32px;
+    border-top: 1px solid rgba(250, 247, 239, 0.15);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .principle-num {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 600;
+    color: var(--celeste);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .principle-text {
+    font-size: 13px;
+    color: rgba(250, 247, 239, 0.75);
+    line-height: 1.6;
+  }
+  .principle-text strong { color: var(--cream); display: block; margin-bottom: 4px; font-weight: 600; }
+
+  /* Intake */
+  .intake-section {
+    background: var(--cream);
+    padding: 100px 32px;
+  }
+  .intake-wrap {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 60px;
+    align-items: start;
+  }
+  .intake-pitch h3 {
+    font-family: var(--font-display);
+    font-size: clamp(36px, 4vw, 48px);
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+  }
+  .intake-pitch h3 em { font-style: italic; color: var(--rojo); }
+  .intake-pitch > p {
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--ink-muted);
+    margin-bottom: 16px;
+  }
+  .intake-pitch ul { list-style: none; margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--ink-line); }
+  .intake-pitch li {
+    padding: 10px 0;
+    font-size: 14px;
+    display: flex;
+    gap: 12px;
+  }
+  .intake-pitch li::before {
+    content: '→';
+    color: var(--rojo);
+    font-weight: 700;
+  }
+  .intake-form {
+    background: var(--cream-deep);
+    border: 1px solid var(--ink-line-strong);
+    border-radius: 2px;
+    padding: 36px;
+  }
+  .field { margin-bottom: 18px; }
+  .field label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--ink-muted);
+    margin-bottom: 8px;
+    font-weight: 500;
+  }
+  .field input, .field select, .field textarea {
+    width: 100%;
+    background: var(--cream);
+    border: 1.5px solid var(--ink-line);
+    border-radius: 2px;
+    padding: 14px 16px;
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--ink); }
+  .field textarea { resize: vertical; min-height: 110px; }
+  .field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .submit-btn {
+    background: var(--rojo);
+    color: var(--cream);
+    border: none;
+    border-radius: 2px;
+    padding: 18px 32px;
+    font-family: var(--font-body);
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 8px;
+    transition: background 0.15s;
+  }
+  .submit-btn:hover { background: var(--rojo-deep); }
+  .form-note { font-size: 12px; color: var(--ink-faint); text-align: center; margin-top: 14px; line-height: 1.5; }
+  .form-success {
+    background: var(--celeste-pale);
+    border: 1.5px solid var(--celeste);
+    padding: 28px;
+    text-align: center;
+    border-radius: 2px;
+  }
+  .form-success-title {
+    font-family: var(--font-display);
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  .form-success-body { font-size: 14px; color: var(--ink-muted); line-height: 1.6; }
+
+  /* Footer */
+  footer {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 72px 32px 32px;
+  }
+  .footer-inner { max-width: 1240px; margin: 0 auto; }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 40px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(250, 247, 239, 0.15);
+  }
+  .footer-brand h4 {
+    font-family: var(--font-display);
+    font-size: 32px;
+    font-weight: 500;
+    font-style: italic;
+    margin-bottom: 12px;
+  }
+  .footer-brand p {
+    font-size: 14px;
+    color: rgba(250, 247, 239, 0.65);
+    line-height: 1.65;
+    max-width: 380px;
+    margin-bottom: 20px;
+  }
+  .footer-tagline {
+    font-family: var(--font-display);
+    font-style: italic;
+    font-size: 14px;
+    color: var(--celeste);
+    border-left: 2px solid var(--rojo);
+    padding-left: 12px;
+  }
+  .footer-col h5 {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    color: var(--celeste);
+    margin-bottom: 16px;
+    font-weight: 500;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li {
+    margin-bottom: 10px;
+    font-size: 13px;
+    color: rgba(250, 247, 239, 0.7);
+    line-height: 1.5;
+    cursor: pointer;
+    transition: color 0.15s;
+  }
+  .footer-col li:hover { color: var(--celeste); }
+  .footer-bottom {
+    padding-top: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    color: rgba(250, 247, 239, 0.5);
+    font-family: var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .footer-flag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .footer-flag-mark {
+    width: 14px;
+    height: 14px;
+    background: var(--celeste);
+    clip-path: polygon(0 0, 100% 50%, 0 100%);
+  }
+
+  /* Responsive */
+  @media (max-width: 1080px) {
+    .thesis-grid { grid-template-columns: 1fr; gap: 40px; }
+    .circuits { grid-template-columns: repeat(2, 1fr); }
+    .circuit-card.featured { grid-column: span 2; }
+    .about-inner { grid-template-columns: 1fr; gap: 40px; }
+    .intake-wrap { grid-template-columns: 1fr; gap: 40px; }
+    .infra-grid { grid-template-columns: 1fr; }
+    .lookup-results { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 720px) {
+    nav.top-nav a { display: none; }
+    .circuits { grid-template-columns: 1fr; }
+    .circuit-card.featured { grid-column: span 1; }
+    .section-head { flex-direction: column; align-items: flex-start; }
+    .section-side { text-align: left; }
+    .lookup-results { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; }
+    section.std, .deep-dive-inner, .intake-section { padding: 60px 20px; }
+    .hero { padding: 60px 20px 30px; }
+    .field-row { grid-template-columns: 1fr; }
+    .about-principles { grid-template-columns: 1fr; }
+    .deep-dive-body { padding: 20px; }
+    .deep-dive-header { padding: 18px 20px; flex-direction: column; align-items: flex-start; gap: 12px; }
+    .header-inner { padding: 14px 20px; gap: 12px; }
+    .lang-toggle { display: none; }
+  }
+
+  /* Fade in */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.8s ease forwards;
+  }
+  .fade-in.delay-1 { animation-delay: 0.1s; }
+  .fade-in.delay-2 { animation-delay: 0.2s; }
+  @keyframes fadeIn {
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="flag-bar"></div>
+
+<header>
+  <div class="header-inner">
+    <a href="#" class="brand">
+      <div class="brand-mark"></div>
+      <div class="brand-text">
+        <span class="brand-name">Quién Gana</span>
+        <span class="brand-sub" data-en="A Boricuas Antifascistas project" data-es="Un proyecto de Boricuas Antifascistas">A Boricuas Antifascistas project</span>
+      </div>
+    </a>
+    <nav class="top-nav">
+      <a href="#thesis" data-en="The Circuit" data-es="El Circuito">The Circuit</a>
+      <a href="#circuits" data-en="Investigations" data-es="Investigaciones">Investigations</a>
+      <a href="#infra" data-en="Infrastructure" data-es="Infraestructura">Infrastructure</a>
+      <a href="#about" data-en="About" data-es="Quiénes somos">About</a>
+      <a href="#report" data-en="Report" data-es="Reporta">Report</a>
+      <div class="lang-toggle">
+        <button id="btn-en" class="active">EN</button>
+        <button id="btn-es">ES</button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="fade-in">
+    <div class="eyebrow" data-en="An investigative platform · est. 2025" data-es="Plataforma investigativa · est. 2025">An investigative platform · est. 2025</div>
+    <h1 class="hero-title" data-en="The colony has many doors. <em>We're mapping them all.</em>" data-es="La colonia tiene muchas puertas. <em>Las estamos mapeando todas.</em>">The colony has many doors. <em>We're mapping them all.</em></h1>
+    <p class="hero-lede" data-en="<strong>Quién Gana</strong> is a public-accountability platform that traces the colonial circuits moving wealth out of Puerto Rico — through pension raids, tax havens, disaster contracts, pharmaceutical extraction, energy privatization, real-estate displacement, and the federal debt machinery itself — and connects the people on every end of the wire." data-es="<strong>Quién Gana</strong> es una plataforma de rendición de cuentas que rastrea los circuitos coloniales que extraen riqueza de Puerto Rico — a través de fondos de pensiones, paraísos fiscales, contratos de desastre, extracción farmacéutica, privatización energética, desplazamiento, y la maquinaria de la deuda federal — y conecta a la gente afectada en cada extremo del circuito."><strong>Quién Gana</strong> is a public-accountability platform that traces the colonial circuits moving wealth out of Puerto Rico — through pension raids, tax havens, disaster contracts, pharmaceutical extraction, energy privatization, real-estate displacement, and the federal debt machinery itself — and connects the people on every end of the wire.</p>
+    <div class="hero-actions">
+      <a href="#circuits" class="btn-primary" data-en="See the investigations" data-es="Ver las investigaciones">See the investigations <span class="btn-arrow">→</span></a>
+      <a href="#thesis" class="btn-secondary" data-en="Read the thesis" data-es="Lee la tesis">Read the thesis</a>
+    </div>
+  </div>
+</section>
+
+<!-- THE CIRCUIT THESIS -->
+<section class="thesis" id="thesis">
+  <div class="thesis-inner">
+    <div class="thesis-grid">
+      <div>
+        <div class="thesis-label" data-en="The thesis" data-es="La tesis">The thesis</div>
+        <h2 data-en="Not scandals. <em>A machine.</em>" data-es="No son escándalos. <em>Es una máquina.</em>">Not scandals. <em>A machine.</em></h2>
+        <div class="thesis-body">
+          <p data-en="Each story you've read about Puerto Rico — the debt crisis, LUMA, the crypto bros, Maria's missing billions, the privatized hospitals, the closed schools — is usually told as its own scandal. As if the actors were unrelated. As if the pattern were coincidence." data-es="Cada historia que has leído sobre Puerto Rico — la crisis de la deuda, LUMA, los criptobros, los miles de millones desaparecidos de María, los hospitales privatizados, las escuelas cerradas — suele contarse como un escándalo aparte. Como si los actores no estuvieran relacionados. Como si el patrón fuera coincidencia.">Each story you've read about Puerto Rico — the debt crisis, LUMA, the crypto bros, Maria's missing billions, the privatized hospitals, the closed schools — is usually told as its own scandal. As if the actors were unrelated. As if the pattern were coincidence.</p>
+          <p data-en="It isn't. It's <strong>one machine</strong> with many circuits. Federal law builds the channels. Wall Street and corporate America run product through them. The colony pays. The metropole collects. The same firms appear in case after case. The same Congressional moves enable each one." data-es="No lo es. Es <strong>una máquina</strong> con muchos circuitos. La ley federal construye los canales. Wall Street y las corporaciones mueven el producto. La colonia paga. La metrópolis cobra. Las mismas firmas aparecen caso tras caso. Las mismas movidas del Congreso habilitan cada una.">It isn't. It's <strong>one machine</strong> with many circuits. Federal law builds the channels. Wall Street and corporate America run product through them. The colony pays. The metropole collects. The same firms appear in case after case. The same Congressional moves enable each one.</p>
+          <p data-en="Quién Gana documents the machine in public — circuit by circuit, name by name, dollar by dollar. We don't just expose extraction. We connect the wronged to the unwitting to the responsible, so that organizing becomes possible." data-es="Quién Gana documenta la máquina en público — circuito por circuito, nombre por nombre, dólar por dólar. No solo exponemos la extracción. Conectamos a los afectados con los cómplices involuntarios y los responsables, para que la organización sea posible.">Quién Gana documents the machine in public — circuit by circuit, name by name, dollar by dollar. We don't just expose extraction. We connect the wronged to the unwitting to the responsible, so that organizing becomes possible.</p>
+        </div>
+        <div class="thesis-quote" data-en="&ldquo;La colonia paga. Wall Street cobra. El Congreso escribe las reglas para ambos.&rdquo;" data-es="&ldquo;La colonia paga. Wall Street cobra. El Congreso escribe las reglas para ambos.&rdquo;">&ldquo;La colonia paga. Wall Street cobra. El Congreso escribe las reglas para ambos.&rdquo;</div>
+      </div>
+
+      <div class="circuit-diagram">
+        <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+          <!-- Center: Puerto Rico -->
+          <g>
+            <circle cx="250" cy="250" r="64" fill="#CE2029" opacity="0.92"/>
+            <text x="250" y="244" text-anchor="middle" font-family="Fraunces" font-style="italic" font-weight="600" font-size="18" fill="#FAF7EF">Puerto Rico</text>
+            <text x="250" y="266" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="#FAF7EF" letter-spacing="1.5">LA COLONIA</text>
+          </g>
+          <!-- Outer ring labels -->
+          <g font-family="JetBrains Mono" font-size="10" fill="#6BAACF" letter-spacing="1.5">
+            <text x="250" y="60" text-anchor="middle">CONGRESO</text>
+            <text x="430" y="158" text-anchor="middle">WALL STREET</text>
+            <text x="430" y="350" text-anchor="middle">CORPORACIONES</text>
+            <text x="250" y="450" text-anchor="middle">CONTRATISTAS</text>
+            <text x="70" y="350" text-anchor="middle">ESTADOS</text>
+            <text x="70" y="158" text-anchor="middle">LA JUNTA</text>
+          </g>
+          <!-- Outer nodes -->
+          <g fill="#FAF7EF" opacity="0.18">
+            <circle cx="250" cy="80" r="20"/>
+            <circle cx="397" cy="178" r="20"/>
+            <circle cx="397" cy="322" r="20"/>
+            <circle cx="250" cy="420" r="20"/>
+            <circle cx="103" cy="322" r="20"/>
+            <circle cx="103" cy="178" r="20"/>
+          </g>
+          <!-- Inward arrows (rules / control) -->
+          <g stroke="#6BAACF" stroke-width="1.5" fill="none" opacity="0.55" stroke-dasharray="3,3">
+            <line x1="250" y1="100" x2="250" y2="190"/>
+            <line x1="103" y1="198" x2="200" y2="232"/>
+          </g>
+          <!-- Outward arrows (extraction) -->
+          <g stroke="#CE2029" stroke-width="2" fill="none" opacity="0.85">
+            <line x1="300" y1="232" x2="380" y2="190" marker-end="url(#arrowred)"/>
+            <line x1="300" y1="268" x2="380" y2="310" marker-end="url(#arrowred)"/>
+            <line x1="250" y1="314" x2="250" y2="402" marker-end="url(#arrowred)"/>
+            <line x1="200" y1="268" x2="123" y2="310" marker-end="url(#arrowred)"/>
+          </g>
+          <defs>
+            <marker id="arrowred" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+              <polygon points="0 0, 8 4, 0 8" fill="#CE2029"/>
+            </marker>
+          </defs>
+          <!-- Inner labels -->
+          <g font-family="JetBrains Mono" font-size="8" fill="#FAF7EF" opacity="0.6" letter-spacing="1">
+            <text x="345" y="200">$$$</text>
+            <text x="345" y="298">$$$</text>
+            <text x="258" y="365">$$$</text>
+            <text x="148" y="298">$$$</text>
+            <text x="258" y="158">Rules</text>
+            <text x="148" y="200">Veto</text>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE CIRCUITS -->
+<section class="std" id="circuits">
+  <div class="section-head">
+    <div class="section-head-text">
+      <div class="section-label" data-num="01" data-en="The investigations" data-es="Las investigaciones">The investigations</div>
+      <h2 class="section-title" data-en="Seven circuits. <em>One machine.</em>" data-es="Siete circuitos. <em>Una máquina.</em>">Seven circuits. <em>One machine.</em></h2>
+      <p class="section-intro" data-en="Each circuit is a separate investigation — its own data, its own actors, its own ground-level reality. Together they map the colonial extraction apparatus in motion." data-es="Cada circuito es una investigación aparte — sus propios datos, sus propios actores, su propia realidad sobre el terreno. Juntos mapean el aparato colonial de extracción en movimiento.">Each circuit is a separate investigation — its own data, its own actors, its own ground-level reality. Together they map the colonial extraction apparatus in motion.</p>
+    </div>
+    <div class="section-side" data-en="Status<br/>Live · Building · Research" data-es="Estado<br/>Activo · Construyendo · Investigando">Status<br/>Live · Building · Research</div>
+  </div>
+
+  <div class="circuits">
+    <!-- 00 — Pensiones (FEATURED) -->
+    <div class="circuit-card featured" onclick="document.getElementById('deep-dive').scrollIntoView({behavior:'smooth'})">
+      <div class="circuit-card-top">
+        <span class="circuit-num">00 / Pensiones</span>
+        <span class="circuit-status status-live" data-en="Live" data-es="Activo">Live</span>
+      </div>
+      <div class="circuit-icon">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="16" cy="16" r="13"/>
+          <path d="M16 8v16M20 11h-5a2 2 0 000 4h2a2 2 0 010 4h-5"/>
+        </svg>
+      </div>
+      <div>
+        <div class="circuit-title" data-en="The pension raid" data-es="El asalto de pensiones">The pension raid</div>
+        <div class="circuit-title-es" data-en="El asalto de pensiones" data-es="The pension raid">El asalto de pensiones</div>
+      </div>
+      <div class="circuit-mechanism" data-en="Vulture funds bought Puerto Rico's retirement-system bonds at pennies on the dollar, then sued in bankruptcy court to take money from retired teachers and firefighters first. Their largest clients? Public pension funds in Oregon, Washington, New York, California, and beyond." data-es="Los fondos buitre compraron los bonos del sistema de retiro de Puerto Rico por centavos de dólar, luego demandaron en quiebra para quitarle el dinero a los maestros y bomberos jubilados primero. ¿Sus clientes más grandes? Fondos públicos de pensiones de Oregon, Washington, Nueva York, California, y más.">Vulture funds bought Puerto Rico's retirement-system bonds at pennies on the dollar, then sued in bankruptcy court to take money from retired teachers and firefighters first. Their largest clients? Public pension funds in Oregon, Washington, New York, California, and beyond.</div>
+      <div class="circuit-meta">
+        <div>
+          <div class="circuit-stat">$1.2B+</div>
+          <div class="circuit-stat-label" data-en="US public-pension money in vulture funds" data-es="Pensiones públicas en fondos buitre">US public-pension money in vulture funds</div>
+        </div>
+        <span class="circuit-cta" data-en="Open investigation →" data-es="Abrir investigación →">Open investigation →</span>
+      </div>
+    </div>
+
+    <!-- 01 — Colonia Fiscal (Act 60) -->
+    <div class="circuit-card">
+      <div class="circuit-card-top">
+        <span class="circuit-num">01 / Colonia Fiscal</span>
+        <span class="circuit-status status-building" data-en="Building" data-es="Construyendo">Building</span>
+      </div>
+      <div class="circuit-icon">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 26h20M9 26V14l7-6 7 6v12M13 26v-7h6v7"/>
+        </svg>
+      </div>
+      <div>
+        <div class="circuit-title" data-en="Act 60 settlers" data-es="Los colonos de la Ley 60">Act 60 settlers</div>
+        <div class="circuit-title-es" data-en="Los colonos de la Ley 60" data-es="Act 60 settlers">Los colonos de la Ley 60</div>
+      </div>
+      <div class="circuit-mechanism" data-en="Crypto bros and hedge funders relocate to Puerto Rico to pay near-zero capital gains and a 4% corporate rate — while displacing locals and contributing little. The beneficiaries are publicly listed at Hacienda. We're making the list useful." data-es="Criptobros y administradores de hedge funds se mudan a Puerto Rico para pagar casi nada en ganancias de capital y 4% corporativo — mientras desplazan a la gente local. Los beneficiarios están listados públicamente en Hacienda. Estamos haciendo esa lista útil.">Crypto bros and hedge funders relocate to Puerto Rico to pay near-zero capital gains and a 4% corporate rate — while displacing locals and contributing little. The beneficiaries are publicly listed at Hacienda. We're making the list useful.</div>
+      <div class="circuit-meta">
+        <div>
+          <div class="circuit-stat">5,000+</div>
+          <div class="circuit-stat-label" data-en="Individual decree holders" data-es="Beneficiarios individuales">Individual decree holders</div>
+        </div>
+        <span class="circuit-cta" data-en="In progress →" data-es="En progreso →">In progress →</span>
+      </div>
+    </div>
+
+    <!-- 02 — LUMA -->
+    <div class="circuit-card">
+      <div class="circuit-card-top">
+        <span class="circuit-num">02 / LUMA</span>
+        <span class="circuit-status status-urgent" data-en="Urgent" data-es="Urgente">Urgent</span>
+      </div>
+      <div class="circuit-icon">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M18 4l-10 15h7l-2 9 10-15h-7l2-9z" stroke-linejoin="round"/>
+        </svg>
+      </div>
+      <div>
+        <div class="circuit-title" data-en="The grid privatization" data-es="La privatización eléctrica">The grid privatization</div>
+        <div class="circuit-title-es" data-en="La privatización eléctrica" data-es="The grid privatization">La privatización eléctrica</div>
+      </div>
+      <div class="circuit-mechanism" data-en="LUMA Energy — a consortium of Canada's ATCO and Texas's Quanta Services — took over Puerto Rico's transmission and distribution grid in 2021. Outages got worse. Bills went up. Executive compensation soared. The contract terms remain largely opaque to the public it serves." data-es="LUMA Energy — un consorcio de ATCO de Canadá y Quanta Services de Texas — tomó control de la red eléctrica de Puerto Rico en 2021. Los apagones empeoraron. Las facturas subieron. La compensación ejecutiva se disparó. Los términos del contrato siguen siendo opacos para el pueblo al que sirve.">LUMA Energy — a consortium of Canada's ATCO and Texas's Quanta Services — took over Puerto Rico's transmission and distribution grid in 2021. Outages got worse. Bills went up. Executive compensation soared. The contract terms remain largely opaque to the public it serves.</div>
+      <div class="circuit-meta">
+        <div>
+          <div class="circuit-stat">15yr</div>
+          <div class="circuit-stat-label" data-en="Contract length, ~$115M/yr base fee" data-es="Duración del contrato, ~$115M/año">Contract length, ~$115M/yr base fee</div>
+        </div>
+        <span class="circuit-cta" data-en="In progress →" data-es="En progreso →">In progress →</span>
+      </div>
+    </div>
+
+    <!-- 03 — La Junta -->
+    <div class="circuit-card">
+      <div class="circuit-card-top">
+        <span class="circuit-num">03 / La Junta</span>
+        <span class="circuit-status status-building" data-en="Building" data-es="Construyendo">Building</span>
+      </div>
+      <div class="circuit-icon">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M16 4v8M10 12h12l-2 8h-8l-2-8zM12 24h8M16 20v4"/>
+        </svg>
+      </div>
+      <div>
+        <div class="circuit-title" data-en="PROMESA &amp; the debt" data-es="PROMESA y la deuda">PROMESA &amp; the debt</div>
+        <div class="circuit-title-es" data-en="PROMESA y la deuda" data-es="PROMESA &amp; the debt">PROMESA y la deuda</div>
+      </div>
+      <div class="circuit-mechanism" data-en="The unelected fiscal control board still holds veto power over Puerto Rico's budget, laws, and labor protections — nearly a decade in. A live dashboard of where each month's tax revenue actually goes: debt service vs. schools, hospitals, infrastructure." data-es="La junta de control fiscal no electa todavía mantiene poder de veto sobre el presupuesto, las leyes, y las protecciones laborales de Puerto Rico — casi una década después. Un dashboard en vivo de adónde va realmente cada mes el dinero público: servicio de deuda vs. escuelas, hospitales, infraestructura.">The unelected fiscal control board still holds veto power over Puerto Rico's budget, laws, and labor protections — nearly a decade in. A live dashboard of where each month's tax revenue actually goes: debt service vs. schools, hospitals, infrastructure.</div>
+      <div class="circuit-meta">
+        <div>
+          <div class="circuit-stat">$22B+</div>
+          <div class="circuit-stat-label" data-en="Restructured debt still being serviced" data-es="Deuda reestructurada que se sigue pagando">Restructured debt still being serviced</div>
+        </div>
+        <span class="circuit-cta" data-en="In progress →" data-es="En progreso →">In progress →</span>
+      </div>
+    </div>
+
+    <!-- 04 — Contratos -->
+    <div class="circuit-card">
+      <div class="circuit-card-top">
+        <span class="circuit-num">04 / Contratos</span>
+        <span class="circuit-status status-research" data-en="Research" data-es="Investigando">Research</span>
+      </div>
+      <div class="circuit-icon">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 14v12h20V14M4 14l12-8 12 8M16 26V18"/>
+        </svg>
+      </div>
+      <div>
+        <div class="circuit-title" data-en="Disaster contractors" data-es="Los contratistas del desastre">Disaster contractors</div>
+        <div class="circuit-title-es" data-en="Los contratistas del desastre" data-es="Disaster contractors">Los contratistas del desastre</div>
+      </div>
+      <div class="circuit-mechanism" data-en="Post-Maria, post-earthquake, post-Fiona: who got the FEMA, HUD, and Army Corps contracts? Whitefish Energy, COBRA, Tetra Tech, and dozens of others moved billions through Puerto Rico while rebuilding stalled. The data is on USASpending. We're making it readable." data-es="Después de María, después de los terremotos, después de Fiona: ¿quién consiguió los contratos de FEMA, HUD y el Cuerpo de Ingenieros? Whitefish Energy, COBRA, Tetra Tech, y docenas más movieron miles de millones por Puerto Rico mientras la reconstrucción se estancaba. Los datos están en USASpending. Los estamos haciendo legibles.">Post-Maria, post-earthquake, post-Fiona: who got the FEMA, HUD, and Army Corps contracts? Whitefish Energy, COBRA, Tetra Tech, and dozens of others moved billions through Puerto Rico while rebuilding stalled. The data is on USASpending. We're making it readable.</div>
+      <div class="circuit-meta">
+        <div>
+          <div class="circuit-stat">$80B+</div>
+          <div class="circuit-stat-label" data-en="Federal disaster funds appropriated" data-es="Fondos federales de desastre asignados">Federal disaster funds appropriated</div>
+        </div>
+        <span class="circuit-cta" data-en="In progress →" data-es="En progreso →">In progress →</span>
+      </div>
+    </div>
+
+    <!-- 05 — Farma -->
+    <div class="circuit-card">
+      <div class="circuit-card-top">
+        <span class="circuit-num">05 / Farma</span>
+        <span class="circuit-status status-research" data-en="Research" data-es="Investigando">Research</span>
+      </div>
+      <div class="circuit-icon">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+          <rect x="6" y="12" width="20" height="8" rx="4"/>
+          <path d="M16 12v8M11 16h10" transform="rotate(45 16 16)"/>
+        </svg>
+      </div>
+      <div>
+        <div class="circuit-title" data-en="Pharma extraction" data-es="La extracción farmacéutica">Pharma extraction</div>
+        <div class="circuit-title-es" data-en="La extracción farmacéutica" data-es="Pharma extraction">La extracción farmacéutica</div>
+      </div>
+      <div class="circuit-mechanism" data-en="Look up the drugs you take — see if they're made in Puerto Rico, and which company books the profits there. Pfizer, AbbVie, Lilly, BMS, Amgen, and J&amp;J use Puerto Rican subsidiaries to pay minimal effective rates on US-bound medications." data-es="Busca los medicamentos que tomas — ve si se fabrican en Puerto Rico, y qué compañía registra las ganancias allí. Pfizer, AbbVie, Lilly, BMS, Amgen, y J&amp;J usan subsidiarias puertorriqueñas para pagar tasas mínimas sobre medicamentos destinados a EE.UU.">Look up the drugs you take — see if they're made in Puerto Rico, and which company books the profits there. Pfizer, AbbVie, Lilly, BMS, Amgen, and J&amp;J use Puerto Rican subsidiaries to pay minimal effective rates on US-bound medications.</div>
+      <div class="circuit-meta">
+        <div>
+          <div class="circuit-stat">~13</div>
+          <div class="circuit-stat-label" data-en="Of top 20 US drugs made in PR" data-es="De los 20 medicamentos top hechos en PR">Of top 20 US drugs made in PR</div>
+        </div>
+        <span class="circuit-cta" data-en="In progress →" data-es="En progreso →">In progress →</span>
+      </div>
+    </div>
+
+    <!-- 06 — El Desalojo -->
+    <div class="circuit-card">
+      <div class="circuit-card-top">
+        <span class="circuit-num">06 / El Desalojo</span>
+        <span class="circuit-status status-building" data-en="Building" data-es="Construyendo">Building</span>
+      </div>
+      <div class="circuit-icon">
+        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5">
+          <circle cx="14" cy="12" r="4"/>
+          <path d="M14 16v10M10 21l4 4M22 8l-4 4M24 22l-2-2 4-4 2 2-4 4z"/>
+        </svg>
+      </div>
+      <div>
+        <div class="circuit-title" data-en="Land &amp; displacement" data-es="Tierra y desplazamiento">Land &amp; displacement</div>
+        <div class="circuit-title-es" data-en="Tierra y desplazamiento" data-es="Land &amp; displacement">Tierra y desplazamiento</div>
+      </div>
+      <div class="circuit-mechanism" data-en="Rincón, Aguadilla, Old San Juan, Vieques, Culebra. Long-term housing converts to Airbnb. Beachfront privatizes. Renters get pushed inland — or off the island entirely. Block by block, owner by owner, we're mapping who's buying and who's being pushed." data-es="Rincón, Aguadilla, Viejo San Juan, Vieques, Culebra. La vivienda a largo plazo se convierte en Airbnb. La costa se privatiza. Los inquilinos son empujados hacia adentro — o fuera de la isla. Cuadra por cuadra, dueño por dueño, mapeamos quién compra y quién es desplazado.">Rincón, Aguadilla, Old San Juan, Vieques, Culebra. Long-term housing converts to Airbnb. Beachfront privatizes. Renters get pushed inland — or off the island entirely. Block by block, owner by owner, we're mapping who's buying and who's being pushed.</div>
+      <div class="circuit-meta">
+        <div>
+          <div class="circuit-stat">25k+</div>
+          <div class="circuit-stat-label" data-en="Active short-term rentals on the island" data-es="Alquileres a corto plazo activos en la isla">Active short-term rentals on the island</div>
+        </div>
+        <span class="circuit-cta" data-en="In progress →" data-es="En progreso →">In progress →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEEP DIVE — Pension piece -->
+<section class="deep-dive" id="deep-dive">
+  <div class="deep-dive-inner">
+    <div class="section-head">
+      <div class="section-head-text">
+        <div class="section-label" data-num="02" data-en="Featured investigation" data-es="Investigación destacada">Featured investigation</div>
+        <h2 class="section-title" data-en="00 — <em>The pension raid</em>" data-es="00 — <em>El asalto de pensiones</em>">00 — <em>The pension raid</em></h2>
+        <p class="section-intro" data-en="Look up your state, fund, or hedge firm. Public-pension exposure to the vulture funds that sued Puerto Rico's retirement system, drawn from court filings, SEC disclosures, and Delaware corporate records." data-es="Busca tu estado, fondo o firma. Exposición de las pensiones públicas a los fondos buitre que demandaron al sistema de retiro de Puerto Rico, basado en expedientes judiciales, registros de la SEC y registros corporativos de Delaware.">Look up your state, fund, or hedge firm. Public-pension exposure to the vulture funds that sued Puerto Rico's retirement system, drawn from court filings, SEC disclosures, and Delaware corporate records.</p>
+      </div>
+      <div class="section-side" data-en="Data window<br/>2017 — 2018 bankruptcy<br/>Updates ongoing" data-es="Período<br/>Quiebra 2017—2018<br/>Actualizaciones en curso">Data window<br/>2017 — 2018 bankruptcy<br/>Updates ongoing</div>
+    </div>
+
+    <div class="deep-dive-shell">
+      <div class="deep-dive-header">
+        <div class="deep-dive-header-left">
+          <span class="deep-dive-num">00 / Pensiones</span>
+          <span class="deep-dive-title" data-en="Public records query" data-es="Consulta de archivos públicos">Public records query</span>
+        </div>
+        <span class="circuit-status status-live" data-en="Live data" data-es="Datos activos">Live data</span>
+      </div>
+      <div class="deep-dive-body">
+        <div class="lookup-row">
+          <input type="text" class="lookup-input" id="searchInput" data-en-placeholder="Try: Oregon, CalSTRS, Oaktree, New York…" data-es-placeholder="Prueba: Oregon, CalSTRS, Oaktree, Nueva York…" placeholder="Try: Oregon, CalSTRS, Oaktree, New York…">
+        </div>
+        <div class="lookup-chips">
+          <button class="chip active" data-filter="all" data-en="All" data-es="Todo">All</button>
+          <button class="chip" data-filter="state" data-en="State systems" data-es="Sistemas estatales">State systems</button>
+          <button class="chip" data-filter="teacher" data-en="Teachers' funds" data-es="Fondos de maestros">Teachers' funds</button>
+          <button class="chip" data-filter="former" data-en="Former exposure" data-es="Exposición previa">Former exposure</button>
+        </div>
+        <div class="lookup-results" id="results"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INFRASTRUCTURE -->
+<section class="infra">
+  <div class="std" style="padding: 100px 32px;">
+    <div class="section-head">
+      <div class="section-head-text">
+        <div class="section-label" data-num="03" data-en="The infrastructure" data-es="La infraestructura">The infrastructure</div>
+        <h2 class="section-title" data-en="The platform <em>connects</em> the investigations." data-es="La plataforma <em>conecta</em> las investigaciones.">The platform <em>connects</em> the investigations.</h2>
+        <p class="section-intro" data-en="Each circuit feeds the same infrastructure: a unified map of actors, a wire that surfaces every news mention, tools for divestment campaigns, and an open contribution layer." data-es="Cada circuito alimenta la misma infraestructura: un mapa unificado de actores, un cable que recoge cada mención en las noticias, herramientas para campañas de desinversión, y una capa abierta de contribución.">Each circuit feeds the same infrastructure: a unified map of actors, a wire that surfaces every news mention, tools for divestment campaigns, and an open contribution layer.</p>
+      </div>
+    </div>
+
+    <div class="infra-grid">
+      <div class="infra-card">
+        <div class="infra-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 22s8-7 8-13a8 8 0 10-16 0c0 6 8 13 8 13z"/>
+            <circle cx="12" cy="9" r="3"/>
+          </svg>
+        </div>
+        <div class="infra-card-content">
+          <h3 data-en="El Mapa" data-es="El Mapa">El Mapa</h3>
+          <div class="infra-es" data-en="The Map · geographic view" data-es="The Map · vista geográfica">The Map · geographic view</div>
+          <p data-en="Every actor, on the map. Act 60 settlers pinned to their addresses. Disaster contractors at their project sites. Pharma plants in their towns. Pension funds in their state capitals. Geography turns abstraction into territory." data-es="Cada actor, en el mapa. Colonos de la Ley 60 en sus direcciones. Contratistas en los sitios de obra. Plantas farmacéuticas en sus pueblos. Pensiones en sus capitales estatales. La geografía vuelve concreta la abstracción.">Every actor, on the map. Act 60 settlers pinned to their addresses. Disaster contractors at their project sites. Pharma plants in their towns. Pension funds in their state capitals. Geography turns abstraction into territory.</p>
+        </div>
+      </div>
+
+      <div class="infra-card">
+        <div class="infra-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="6" width="18" height="14" rx="2"/>
+            <path d="M3 10h18M7 14h6M7 17h4"/>
+            <circle cx="17" cy="15.5" r="1.5"/>
+          </svg>
+        </div>
+        <div class="infra-card-content">
+          <h3 data-en="El Cable" data-es="El Cable">El Cable</h3>
+          <div class="infra-es" data-en="The Wire · live news layer" data-es="The Wire · noticias en vivo">The Wire · live news layer</div>
+          <p data-en="A real-time feed that surfaces every news article mentioning any entity in our databases. Quién Gana becomes the place to track ongoing fights — not a campaign that goes stale, but a living archive that organizers, journalists, and researchers can return to weekly." data-es="Un feed en tiempo real que recoge cada artículo que menciona alguna entidad en nuestras bases de datos. Quién Gana se convierte en el lugar para rastrear las luchas en curso — no una campaña que se queda obsoleta, sino un archivo vivo al que pueden volver organizadores, periodistas e investigadores cada semana.">A real-time feed that surfaces every news article mentioning any entity in our databases. Quién Gana becomes the place to track ongoing fights — not a campaign that goes stale, but a living archive that organizers, journalists, and researchers can return to weekly.</p>
+        </div>
+      </div>
+
+      <div class="infra-card">
+        <div class="infra-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M14 3l-4 8h6l-4 10M3 12h4M17 12h4"/>
+          </svg>
+        </div>
+        <div class="infra-card-content">
+          <h3 data-en="Las Herramientas" data-es="Las Herramientas">Las Herramientas</h3>
+          <div class="infra-es" data-en="The Tools · divestment toolkit" data-es="The Tools · kit de desinversión">The Tools · divestment toolkit</div>
+          <p data-en="Once you learn your pension is in Oaktree, you need a next step. Pre-written letters to fund trustees. Model resolutions for union locals. A tracker of which funds have divested under pressure. The piece most accountability projects skip — and the one that turns inbound traffic into actual power." data-es="Cuando descubres que tu pensión está en Oaktree, necesitas un próximo paso. Cartas pre-escritas para los fideicomisarios. Resoluciones modelo para locales sindicales. Un rastreador de qué fondos se han desinvertido bajo presión. La pieza que la mayoría de proyectos de rendición de cuentas omiten — y la que convierte el tráfico en poder real.">Once you learn your pension is in Oaktree, you need a next step. Pre-written letters to fund trustees. Model resolutions for union locals. A tracker of which funds have divested under pressure. The piece most accountability projects skip — and the one that turns inbound traffic into actual power.</p>
+        </div>
+      </div>
+
+      <div class="infra-card">
+        <div class="infra-card-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <path d="M12 4v16M4 12h16"/>
+            <circle cx="12" cy="12" r="9"/>
+          </svg>
+        </div>
+        <div class="infra-card-content">
+          <h3 data-en="Completar el Expediente" data-es="Completar el Expediente">Completar el Expediente</h3>
+          <div class="infra-es" data-en="Complete the Record · open contribution" data-es="Complete the Record · contribución abierta">Complete the Record · open contribution</div>
+          <p data-en="For every entry in every database, anyone can add documentation: photos, news clippings, court filings, personal testimony. Moderated, not free-for-all. Wiki-style depth without surrendering quality. The corpus grows without our team doing every keystroke." data-es="Para cada entrada en cada base de datos, cualquiera puede añadir documentación: fotos, recortes, expedientes, testimonios. Moderado, no libre para todo. Profundidad estilo wiki sin sacrificar calidad. El corpus crece sin que nuestro equipo escriba cada palabra.">For every entry in every database, anyone can add documentation: photos, news clippings, court filings, personal testimony. Moderated, not free-for-all. Wiki-style depth without surrendering quality. The corpus grows without our team doing every keystroke.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT BORICUAS ANTIFASCISTAS -->
+<section class="about" id="about">
+  <div class="about-inner">
+    <div>
+      <div class="about-label" data-en="Who we are" data-es="Quiénes somos">Who we are</div>
+      <h2 data-en="Boricuas <em>Antifascistas.</em>" data-es="Boricuas <em>Antifascistas.</em>">Boricuas <em>Antifascistas.</em></h2>
+    </div>
+    <div>
+      <div class="about-body">
+        <p data-en="<strong>We are diaspora and on-island Puerto Ricans</strong> building public-accountability infrastructure in service of decolonization. We are not a 501(c)3. We are not a think tank. We are not waiting for permission." data-es="<strong>Somos puertorriqueños de la diáspora y de la isla</strong> construyendo infraestructura de rendición de cuentas al servicio de la descolonización. No somos un 501(c)3. No somos un think tank. No estamos esperando permiso."><strong>We are diaspora and on-island Puerto Ricans</strong> building public-accountability infrastructure in service of decolonization. We are not a 501(c)3. We are not a think tank. We are not waiting for permission.</p>
+        <p data-en="Quién Gana exists because the colony's extraction machinery is documented in scattered fragments — court filings here, SEC disclosures there, Hacienda registries somewhere else — but the fragments don't talk to each other. The connections only come into focus when someone insists on putting them together. We're insisting." data-es="Quién Gana existe porque la maquinaria de extracción colonial está documentada en fragmentos dispersos — expedientes judiciales aquí, divulgaciones de la SEC allá, registros de Hacienda en otro lado — pero los fragmentos no hablan entre sí. Las conexiones solo se enfocan cuando alguien insiste en juntarlas. Nosotros estamos insistiendo.">Quién Gana exists because the colony's extraction machinery is documented in scattered fragments — court filings here, SEC disclosures there, Hacienda registries somewhere else — but the fragments don't talk to each other. The connections only come into focus when someone insists on putting them together. We're insisting.</p>
+      </div>
+
+      <div class="about-principles">
+        <div>
+          <div class="principle-num">01</div>
+          <div class="principle-text"><strong data-en="Public record only" data-es="Solo archivo público">Public record only</strong><span data-en="Every claim sources to documents anyone can verify. We don't smear — we cite." data-es="Cada afirmación se basa en documentos verificables. No difamamos — citamos.">Every claim sources to documents anyone can verify. We don't smear — we cite.</span></div>
+        </div>
+        <div>
+          <div class="principle-num">02</div>
+          <div class="principle-text"><strong data-en="Bilingual by default" data-es="Bilingüe por defecto">Bilingual by default</strong><span data-en="Spanish and English from day one. The diaspora and the island read the same page." data-es="Español e inglés desde el día uno. La diáspora y la isla leen la misma página.">Spanish and English from day one. The diaspora and the island read the same page.</span></div>
+        </div>
+        <div>
+          <div class="principle-num">03</div>
+          <div class="principle-text"><strong data-en="In service, not in front" data-es="Al servicio, no al frente">In service, not in front</strong><span data-en="On-island organizers lead. We build tools that serve their fights, not the other way around." data-es="Los organizadores en la isla lideran. Construimos herramientas que sirven sus luchas, no al revés.">On-island organizers lead. We build tools that serve their fights, not the other way around.</span></div>
+        </div>
+        <div>
+          <div class="principle-num">04</div>
+          <div class="principle-text"><strong data-en="Open to contribution" data-es="Abierto a contribución">Open to contribution</strong><span data-en="Researchers, journalists, organizers, affected families — the platform is yours to extend." data-es="Investigadores, periodistas, organizadores, familias afectadas — la plataforma es suya para extender.">Researchers, journalists, organizers, affected families — the platform is yours to extend.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTAKE -->
+<section class="intake-section" id="report">
+  <div class="intake-wrap">
+    <div class="intake-pitch">
+      <div class="section-label" data-num="04" data-en="Get involved" data-es="Participa">Get involved</div>
+      <h3 data-en="Tell us what <em>you're</em> seeing." data-es="Cuéntanos qué <em>estás</em> viendo.">Tell us what <em>you're</em> seeing.</h3>
+      <p data-en="The machine relies on the fact that nobody connects the dots. Pension trustees rely on the fact that their members never look. Act 60 settlers rely on being invisible to their neighbors. We're building a list of people who can change that." data-es="La máquina depende de que nadie conecte los puntos. Los fideicomisarios de pensiones dependen de que sus miembros nunca miren. Los colonos de la Ley 60 dependen de ser invisibles a sus vecinos. Estamos haciendo una lista de gente que pueda cambiar eso.">The machine relies on the fact that nobody connects the dots. Pension trustees rely on the fact that their members never look. Act 60 settlers rely on being invisible to their neighbors. We're building a list of people who can change that.</p>
+      <ul>
+        <li data-en="A public worker whose pension is in these funds" data-es="Trabajador público cuya pensión está en estos fondos">A public worker whose pension is in these funds</li>
+        <li data-en="A Puerto Rican retiree whose benefits were cut" data-es="Jubilado puertorriqueño con beneficios recortados">A Puerto Rican retiree whose benefits were cut</li>
+        <li data-en="A neighbor watching Act 60 displacement firsthand" data-es="Vecino viendo desplazamiento de la Ley 60">A neighbor watching Act 60 displacement firsthand</li>
+        <li data-en="A renter pushed out by short-term-rental conversion" data-es="Inquilino desplazado por conversión a alquiler corto">A renter pushed out by short-term-rental conversion</li>
+        <li data-en="A journalist, researcher, or organizer ready to apply pressure" data-es="Periodista, investigador, u organizador listo para aplicar presión">A journalist, researcher, or organizer ready to apply pressure</li>
+      </ul>
+    </div>
+    <form class="intake-form" id="intakeForm" onsubmit="return submitForm(event)">
+      <div class="field-row">
+        <div class="field">
+          <label data-en="Name or alias" data-es="Nombre o alias">Name or alias</label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="field">
+          <label data-en="Email or Signal" data-es="Email o Signal">Email or Signal</label>
+          <input type="text" name="contact" required>
+        </div>
+      </div>
+      <div class="field">
+        <label data-en="Which circuit?" data-es="¿Qué circuito?">Which circuit?</label>
+        <select name="circuit" required>
+          <option value="" data-en="Choose one" data-es="Selecciona uno">Choose one</option>
+          <option data-en="00 — Pensions" data-es="00 — Pensiones">00 — Pensions</option>
+          <option data-en="01 — Act 60 / Colonia Fiscal" data-es="01 — Ley 60 / Colonia Fiscal">01 — Act 60 / Colonia Fiscal</option>
+          <option data-en="02 — LUMA / Energy grid" data-es="02 — LUMA / Red eléctrica">02 — LUMA / Energy grid</option>
+          <option data-en="03 — PROMESA / Debt" data-es="03 — PROMESA / Deuda">03 — PROMESA / Debt</option>
+          <option data-en="04 — Disaster contractors" data-es="04 — Contratistas del desastre">04 — Disaster contractors</option>
+          <option data-en="05 — Pharma" data-es="05 — Farma">05 — Pharma</option>
+          <option data-en="06 — Land &amp; displacement" data-es="06 — Tierra y desplazamiento">06 — Land &amp; displacement</option>
+          <option data-en="Multiple / other" data-es="Múltiple / otra">Multiple / other</option>
+        </select>
+      </div>
+      <div class="field">
+        <label data-en="I am a…" data-es="Soy…">I am a…</label>
+        <select name="role" required>
+          <option value="" data-en="Choose one" data-es="Selecciona uno">Choose one</option>
+          <option data-en="Public-sector worker" data-es="Trabajador del sector público">Public-sector worker</option>
+          <option data-en="Puerto Rican retiree / family" data-es="Jubilado puertorriqueño / familia">Puerto Rican retiree / family</option>
+          <option data-en="On-island resident" data-es="Residente en la isla">On-island resident</option>
+          <option data-en="Diaspora organizer" data-es="Organizador de la diáspora">Diaspora organizer</option>
+          <option data-en="Union member" data-es="Miembro de sindicato">Union member</option>
+          <option data-en="Journalist or researcher" data-es="Periodista o investigador">Journalist or researcher</option>
+          <option data-en="Otra cosa" data-es="Otra cosa">Otra cosa</option>
+        </select>
+      </div>
+      <div class="field">
+        <label data-en="What you want to share, ask, or report" data-es="Qué quieres compartir, preguntar o reportar">What you want to share, ask, or report</label>
+        <textarea name="message" required></textarea>
+      </div>
+      <button type="submit" class="submit-btn" data-en="Send it in" data-es="Envíalo">Send it in</button>
+      <p class="form-note" data-en="We will never share or sell your info. Encrypted at rest. You'll hear back from a real person." data-es="Nunca compartiremos o venderemos tu información. Encriptado. Te contestará una persona real.">We will never share or sell your info. Encrypted at rest. You'll hear back from a real person.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h4>Quién Gana</h4>
+        <p data-en="A public-accountability platform built by Boricuas Antifascistas. We trace the colonial circuits that extract wealth from Puerto Rico — and we connect the people on every end of the wire." data-es="Una plataforma de rendición de cuentas hecha por Boricuas Antifascistas. Rastreamos los circuitos coloniales que extraen riqueza de Puerto Rico — y conectamos a la gente en cada extremo del cable.">A public-accountability platform built by Boricuas Antifascistas. We trace the colonial circuits that extract wealth from Puerto Rico — and we connect the people on every end of the wire.</p>
+        <div class="footer-tagline" data-en="&ldquo;La colonia paga. Wall Street cobra.&rdquo;" data-es="&ldquo;La colonia paga. Wall Street cobra.&rdquo;">&ldquo;La colonia paga. Wall Street cobra.&rdquo;</div>
+      </div>
+      <div class="footer-col">
+        <h5 data-en="Investigations" data-es="Investigaciones">Investigations</h5>
+        <ul>
+          <li data-en="00 · Pensions" data-es="00 · Pensiones">00 · Pensions</li>
+          <li data-en="01 · Act 60" data-es="01 · Ley 60">01 · Act 60</li>
+          <li data-en="02 · LUMA" data-es="02 · LUMA">02 · LUMA</li>
+          <li data-en="03 · La Junta" data-es="03 · La Junta">03 · La Junta</li>
+          <li data-en="04 · Contracts" data-es="04 · Contratos">04 · Contracts</li>
+          <li data-en="05 · Pharma" data-es="05 · Farma">05 · Pharma</li>
+          <li data-en="06 · Land" data-es="06 · Tierra">06 · Land</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-en="Infrastructure" data-es="Infraestructura">Infrastructure</h5>
+        <ul>
+          <li data-en="El Mapa" data-es="El Mapa">El Mapa</li>
+          <li data-en="El Cable" data-es="El Cable">El Cable</li>
+          <li data-en="Las Herramientas" data-es="Las Herramientas">Las Herramientas</li>
+          <li data-en="Completar" data-es="Completar">Completar</li>
+          <li data-en="Methodology" data-es="Metodología">Methodology</li>
+          <li data-en="Sources" data-es="Fuentes">Sources</li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h5 data-en="Connect" data-es="Conecta">Connect</h5>
+        <ul>
+          <li>Signal</li>
+          <li>Mastodon</li>
+          <li data-en="Newsletter" data-es="Boletín">Newsletter</li>
+          <li data-en="Press" data-es="Prensa">Press</li>
+          <li data-en="Contribute" data-es="Contribuye">Contribute</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div data-en="Built by Boricuas Antifascistas · ¡Patria o muerte!" data-es="Hecho por Boricuas Antifascistas · ¡Patria o muerte!">Built by Boricuas Antifascistas · ¡Patria o muerte!</div>
+      <div class="footer-flag"><span class="footer-flag-mark"></span><span data-en="Bandera Boricua · color original" data-es="Bandera Boricua · color original">Bandera Boricua · color original</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Pension data
+  const stateData = [
+    { state: 'Washington', name: 'State Board of Investment', amount: '$600M', via: 'via Oaktree (2 funds)', tags: ['state'], featured: false },
+    { state: 'Oregon', name: 'Public Employees Retirement Fund', amount: '$625M', via: 'via Centerbridge + Oaktree', tags: ['state'], featured: true },
+    { state: 'New York', name: 'State and Local Retirement', amount: '$249M', via: 'via King Street Capital', tags: ['state'], featured: false },
+    { state: 'Florida', name: 'State Board of Administration', amount: '$200M', via: 'via King Street Capital', tags: ['state'], featured: false },
+    { state: 'North Carolina', name: 'Retirement System', amount: '$190M', via: 'via Oaktree Capital', tags: ['state'], featured: false },
+    { state: 'Massachusetts', name: 'PRIM Board', amount: '$175M', via: 'via Oaktree Capital', tags: ['state'], featured: false },
+    { state: 'California', name: 'CalSTRS — Teachers Retirement', amount: '$125M', via: 'via Centerbridge Partners', tags: ['state', 'teacher'], featured: false },
+    { state: 'Illinois', name: "Teachers' Retirement System", amount: '$100M', via: 'via Oaktree Capital', tags: ['state', 'teacher'], featured: false },
+    { state: 'New Jersey', name: 'Public Employee Retirement', amount: '$100M', via: 'via Glendon Capital', tags: ['state'], featured: false },
+  ];
+
+  let currentFilter = 'all';
+  let currentSearch = '';
+
+  function renderResults() {
+    const container = document.getElementById('results');
+    let items = stateData;
+    if (currentFilter !== 'all') items = items.filter(item => item.tags.includes(currentFilter));
+    if (currentSearch) {
+      const q = currentSearch.toLowerCase();
+      items = items.filter(i => i.state.toLowerCase().includes(q) || i.name.toLowerCase().includes(q) || i.via.toLowerCase().includes(q));
+    }
+    if (items.length === 0) {
+      container.innerHTML = '<div style="grid-column: 1/-1; padding: 40px; text-align: center; color: var(--ink-muted); font-style: italic; background: var(--cream);">No matches. Try a different state or fund name.</div>';
+      return;
+    }
+    container.innerHTML = items.map(i => `
+      <div class="lookup-card ${i.featured ? 'featured' : ''}">
+        <div class="lookup-state">${i.state}</div>
+        <div class="lookup-name">${i.name}</div>
+        <div class="lookup-amount">${i.amount}</div>
+        <div class="lookup-via">${i.via}</div>
+      </div>
+    `).join('');
+  }
+
+  document.querySelectorAll('.chip').forEach(chip => {
+    chip.addEventListener('click', () => {
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      currentFilter = chip.dataset.filter;
+      renderResults();
+    });
+  });
+
+  document.getElementById('searchInput').addEventListener('input', e => {
+    currentSearch = e.target.value;
+    renderResults();
+  });
+
+  function submitForm(e) {
+    e.preventDefault();
+    const form = e.target;
+    const lang = document.documentElement.lang === 'es' ? 'es' : 'en';
+    const title = lang === 'es' ? 'Recibido. Gracias.' : 'Recibido. Gracias.';
+    const body = lang === 'es' ? 'Un miembro de Boricuas Antifascistas te contactará en unos días. Si es urgente, escríbenos por Signal.' : 'A member of Boricuas Antifascistas will reach out within a few days. If urgent, contact us on Signal.';
+    form.innerHTML = `<div class="form-success"><div class="form-success-title">${title}</div><div class="form-success-body">${body}</div></div>`;
+    return false;
+  }
+
+  // Language toggle
+  function setLanguage(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-en]').forEach(el => {
+      const text = el.getAttribute('data-' + lang);
+      if (text) el.innerHTML = text;
+    });
+    document.querySelectorAll('[data-en-placeholder]').forEach(el => {
+      const text = el.getAttribute('data-' + lang + '-placeholder');
+      if (text) el.placeholder = text;
+    });
+    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    document.getElementById('btn-es').classList.toggle('active', lang === 'es');
+  }
+
+  document.getElementById('btn-en').addEventListener('click', () => setLanguage('en'));
+  document.getElementById('btn-es').addEventListener('click', () => setLanguage('es'));
+
+  renderResults();
+</script>
+
+</body>
+</html>
