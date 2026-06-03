@@ -1,26 +1,57 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/*
+  Quién Gana design system (SPEC §7).
+  Palette = Puerto Rico independence flag (celeste). Fonts loaded via
+  next/font in layout.tsx and exposed here as theme tokens, so utilities
+  like bg-celeste, text-ink-muted, font-display, font-mono are available.
+  Aesthetic constraints (SPEC §7): no drop shadows; no gradients except the
+  hero radial blur; radii 2px (rounded-xs) / 4px (rounded-sm); thin borders.
+*/
+
+@theme {
+  /* Primary palette — celeste */
+  --color-celeste: #6baacf;
+  --color-celeste-deep: #4a8fb8;
+  --color-celeste-pale: #dcecf5;
+  --color-celeste-mist: #eff6fa;
+
+  /* Rojo */
+  --color-rojo: #ce2029;
+  --color-rojo-deep: #9a1620;
+  --color-rojo-pale: #f8e2e4;
+
+  /* Cream (surfaces) */
+  --color-cream: #faf7ef;
+  --color-cream-deep: #f3eee2;
+
+  /* Ink (text + lines) */
+  --color-ink: #0f1419;
+  --color-ink-muted: rgba(15, 20, 25, 0.62);
+  --color-ink-faint: rgba(15, 20, 25, 0.4);
+  --color-ink-line: rgba(15, 20, 25, 0.12);
+  --color-ink-line-strong: rgba(15, 20, 25, 0.22);
+
+  /* Typography (font vars set by next/font on <html>) */
+  --font-display: var(--font-fraunces), Georgia, serif;
+  --font-body: var(--font-manrope), -apple-system, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains-mono), ui-monospace, monospace;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-cream);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--color-celeste);
+  color: var(--color-ink);
 }
