@@ -27,11 +27,11 @@ This is a politically sensitive project — it names individuals, touches active
 
 ## 2. Tech stack (decided — see SPEC §2)
 
-Next.js 15 (App Router) · TypeScript strict · Supabase (Postgres 16, Auth, Storage) · **Drizzle** ORM (SQL-first; **never Prisma**) · Tailwind CSS v4 · shadcn/ui · React Hook Form + Zod · **next-intl** · Inngest (jobs) · MapLibre GL + Protomaps · Resend · Sentry · Plausible.
+Next.js 16 (App Router) · TypeScript strict · Supabase (Postgres 16, Auth, Storage) · **Drizzle** ORM (SQL-first; **never Prisma**) · Tailwind CSS v4 · shadcn/ui · React Hook Form + Zod · **next-intl** · Inngest (jobs) · MapLibre GL + Protomaps · Resend · Sentry · Plausible.
 
 Explicitly NOT used: Google Analytics, Facebook Pixel, Mapbox, Firebase, any non-Supabase auth. Do not introduce a dependency that duplicates one of these without asking.
 
-> Note: SPEC pins **Next.js 15**. Hold there unless the operator approves moving to 16.
+> Note: SPEC §2 pins Next.js 15, but the operator approved **Next.js 16** on 2026-06-02 — this overrides the spec. Rationale: greenfield (no migration debt), PPR/Cache Components fit the SEO-critical + dynamic mix, default Turbopack speeds dev, and the stack's ecosystem (next-intl, Drizzle, shadcn, Tailwind v4, Supabase SSR) supports 16. Build on 16.
 
 ## 3. Repo structure
 
@@ -48,7 +48,7 @@ Single repo, app + jobs + admin in one Next.js codebase. Full tree in **SPEC §4
 
 ## 5. i18n rules (see SPEC §8)
 
-- Default locale **`es`** (Spanish leads — a political choice). Locales: `es`, `en`.
+- **Default locale `en` for now** — operator decision (Hector, 2026-06-01); this **overrides SPEC §8's `es` default**. Locales: `es`, `en`. Planned next step: **geo-based default** — detect request IP and default Puerto Rico visitors to `es`, everyone else `en`, always with a visible toggle. Build i18n so the default locale is a single derived/configurable value (not hard-coded), to make that swap trivial.
 - **No hard-coded user-facing strings** — everything through `next-intl` (`useTranslations()`), messages in `src/translations/{es,en}.json`.
 - URL slugs stay **Spanish in both locales** (`/circuitos`, `/pensiones`, `/colonia-fiscal`). Deliberate — don't "translate" routes.
 - Spanish copy from the mockup is a draft; flag it for native review, don't treat as final.
