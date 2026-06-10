@@ -19,11 +19,9 @@ Each of the three projects has its own repo, Supabase project, Vercel project, G
 
 This is a politically sensitive project — it names individuals, touches active litigation, and is explicitly antifascist. The git history must reflect a **dedicated Boricuas Antifascistas identity**, never the operator's personal (`hferran29@gmail.com`) or business (BonBon/Kollab) identities.
 
-- A **pre-commit hook** (`.git/hooks/pre-commit`) currently **blocks all commits**. It exists to prevent the global identity from leaking into history before the BA identity is set up.
-- Do **not** remove that hook, and do **not** set `user.name`/`user.email` yourself. The operator configures the dedicated BA identity and removes the hook when ready.
-- Once unblocked: per-repo `user.name`/`user.email` only (set in `.git/config`, never relying on the global fallback). Push via the dedicated BA GitHub account / SSH host alias — never `git@github.com:` and never the bonbon/kollab aliases.
-- **OPEN QUESTION for the operator:** whether commit messages should carry a `Co-Authored-By: Claude` trailer. For OPSEC it may be undesirable as a tooling fingerprint. Default to **omitting it** until the operator decides.
-- Commit only when asked. Conventional-commit style (`feat:`, `fix:`, `chore:`, `docs:`) once commits are enabled.
+- **Identity (configured).** Per-repo identity is set: `quiengana1898-ops <quiengana1898@gmail.com>` (in `.git/config`, never the global fallback). Push via the dedicated BA GitHub account over the SSH alias **`github-quiengana`** — never `git@github.com:` and never the bonbon/kollab aliases. (An earlier pre-commit hook that blocked all commits before the identity existed has been removed; it's no longer needed. Don't re-add it.)
+- **No `Co-Authored-By` trailer.** Settled (operator, 2026-06-09): commit messages must **omit** the `Co-Authored-By: Claude` trailer, to avoid a tooling fingerprint on a sensitive project. This overrides the global default that adds it.
+- Commit only when asked. Conventional-commit style (`feat:`, `fix:`, `chore:`, `docs:`).
 
 ## 2. Tech stack (decided — see SPEC §2)
 
