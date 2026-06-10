@@ -51,3 +51,6 @@ pnpm-debug.log*
 # misc
 /tmp
 *.local
+
+# local scratch (not committed)
+.scratch/
