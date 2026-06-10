@@ -1,9 +1,207 @@
 {
-  "home": {
-    "eyebrow": "Boricuas Antifascistas",
-    "title": "Quién Gana",
-    "tagline": "Rastreando los circuitos coloniales que extraen la riqueza de Puerto Rico.",
-    "placeholder": "Página de inicio en construcción (Fase 1)."
+  "_note": "Spanish copy is from the design mockup — DRAFT pending native Puerto Rican review before launch (CLAUDE.md §5 / SPEC §8). Do not treat as final.",
+  "nav": {
+    "brandSub": "Un proyecto de Boricuas Antifascistas",
+    "circuit": "El Circuito",
+    "investigations": "Investigaciones",
+    "infrastructure": "Infraestructura",
+    "about": "Quiénes somos",
+    "report": "Reporta"
+  },
+  "hero": {
+    "eyebrow": "Plataforma investigativa · est. 2025",
+    "title": "La colonia tiene muchas puertas. <em>Las estamos mapeando todas.</em>",
+    "lede": "<strong>Quién Gana</strong> es una plataforma de rendición de cuentas que rastrea los circuitos coloniales que extraen riqueza de Puerto Rico — a través de fondos de pensiones, paraísos fiscales, contratos de desastre, extracción farmacéutica, privatización energética, desplazamiento, y la maquinaria de la deuda federal — y conecta a la gente afectada en cada extremo del circuito.",
+    "ctaPrimary": "Ver las investigaciones",
+    "ctaSecondary": "Lee la tesis"
+  },
+  "thesis": {
+    "label": "La tesis",
+    "title": "No son escándalos. <em>Es una máquina.</em>",
+    "p1": "Cada historia que has leído sobre Puerto Rico — la crisis de la deuda, LUMA, los criptobros, los miles de millones desaparecidos de María, los hospitales privatizados, las escuelas cerradas — suele contarse como un escándalo aparte. Como si los actores no estuvieran relacionados. Como si el patrón fuera coincidencia.",
+    "p2": "No lo es. Es <strong>una máquina</strong> con muchos circuitos. La ley federal construye los canales. Wall Street y las corporaciones mueven el producto. La colonia paga. La metrópolis cobra. Las mismas firmas aparecen caso tras caso. Las mismas movidas del Congreso habilitan cada una.",
+    "p3": "Quién Gana documenta la máquina en público — circuito por circuito, nombre por nombre, dólar por dólar. No solo exponemos la extracción. Conectamos a los afectados con los cómplices involuntarios y los responsables, para que la organización sea posible.",
+    "quote": "“La colonia paga. Wall Street cobra. El Congreso escribe las reglas para ambos.”"
+  },
+  "circuits": {
+    "label": "Las investigaciones",
+    "title": "Siete circuitos. <em>Una máquina.</em>",
+    "intro": "Cada circuito es una investigación aparte — sus propios datos, sus propios actores, su propia realidad sobre el terreno. Juntos mapean el aparato colonial de extracción en movimiento.",
+    "sideLabel": "Estado",
+    "sideValue": "Activo · Construyendo · Investigando",
+    "status": {
+      "live": "Activo",
+      "building": "Construyendo",
+      "urgent": "Urgente",
+      "research": "Investigando"
+    },
+    "ctaFeatured": "Abrir investigación",
+    "ctaDefault": "En progreso",
+    "items": {
+      "pensiones": {
+        "mechanism": "Los fondos buitre compraron los bonos del sistema de retiro de Puerto Rico por centavos de dólar, luego demandaron en quiebra para quitarle el dinero a los maestros y bomberos jubilados primero. ¿Sus clientes más grandes? Fondos públicos de pensiones de Oregon, Washington, Nueva York, California, y más.",
+        "statLabel": "Pensiones públicas en fondos buitre"
+      },
+      "coloniaFiscal": {
+        "mechanism": "Criptobros y administradores de hedge funds se mudan a Puerto Rico para pagar casi nada en ganancias de capital y 4% corporativo — mientras desplazan a la gente local. Los beneficiarios están listados públicamente en Hacienda. Estamos haciendo esa lista útil.",
+        "statLabel": "Beneficiarios individuales"
+      },
+      "luma": {
+        "mechanism": "LUMA Energy — un consorcio de ATCO de Canadá y Quanta Services de Texas — tomó control de la red eléctrica de Puerto Rico en 2021. Los apagones empeoraron. Las facturas subieron. La compensación ejecutiva se disparó. Los términos del contrato siguen siendo opacos para el pueblo al que sirve.",
+        "statLabel": "Duración del contrato, ~$115M/año"
+      },
+      "laJunta": {
+        "mechanism": "La junta de control fiscal no electa todavía mantiene poder de veto sobre el presupuesto, las leyes, y las protecciones laborales de Puerto Rico — casi una década después. Un dashboard en vivo de adónde va realmente cada mes el dinero público: servicio de deuda vs. escuelas, hospitales, infraestructura.",
+        "statLabel": "Deuda reestructurada que se sigue pagando"
+      },
+      "contratos": {
+        "mechanism": "Después de María, después de los terremotos, después de Fiona: ¿quién consiguió los contratos de FEMA, HUD y el Cuerpo de Ingenieros? Whitefish Energy, COBRA, Tetra Tech, y docenas más movieron miles de millones por Puerto Rico mientras la reconstrucción se estancaba. Los datos están en USASpending. Los estamos haciendo legibles.",
+        "statLabel": "Fondos federales de desastre asignados"
+      },
+      "farma": {
+        "mechanism": "Busca los medicamentos que tomas — ve si se fabrican en Puerto Rico, y qué compañía registra las ganancias allí. Pfizer, AbbVie, Lilly, BMS, Amgen, y J&J usan subsidiarias puertorriqueñas para pagar tasas mínimas sobre medicamentos destinados a EE.UU.",
+        "statLabel": "De los 20 medicamentos top hechos en PR"
+      },
+      "desalojo": {
+        "mechanism": "Rincón, Aguadilla, Viejo San Juan, Vieques, Culebra. La vivienda a largo plazo se convierte en Airbnb. La costa se privatiza. Los inquilinos son empujados hacia adentro — o fuera de la isla. Cuadra por cuadra, dueño por dueño, mapeamos quién compra y quién es desplazado.",
+        "statLabel": "Alquileres a corto plazo activos en la isla"
+      }
+    }
+  },
+  "deepDive": {
+    "label": "Investigación destacada",
+    "title": "00 — <em>El asalto de pensiones</em>",
+    "intro": "Busca tu estado, fondo o firma. Exposición de las pensiones públicas a los fondos buitre que demandaron al sistema de retiro de Puerto Rico, basado en expedientes judiciales, registros de la SEC y registros corporativos de Delaware.",
+    "side": "Período\nQuiebra 2017—2018\nActualizaciones en curso",
+    "shellTitle": "Consulta de archivos públicos",
+    "liveData": "Datos activos",
+    "searchPlaceholder": "Prueba: Oregon, CalSTRS, Oaktree, Nueva York…",
+    "chips": {
+      "all": "Todo",
+      "state": "Sistemas estatales",
+      "teacher": "Fondos de maestros",
+      "former": "Exposición previa"
+    },
+    "comingSoon": "La búsqueda en vivo llega con el circuito de Pensiones. Por ahora, cuéntanos qué estás rastreando abajo."
+  },
+  "infra": {
+    "label": "La infraestructura",
+    "title": "La plataforma <em>conecta</em> las investigaciones.",
+    "intro": "Cada circuito alimenta la misma infraestructura: un mapa unificado de actores, un cable que recoge cada mención en las noticias, herramientas para campañas de desinversión, y una capa abierta de contribución.",
+    "items": {
+      "mapa": {
+        "name": "El Mapa",
+        "sub": "The Map · vista geográfica",
+        "body": "Cada actor, en el mapa. Colonos de la Ley 60 en sus direcciones. Contratistas en los sitios de obra. Plantas farmacéuticas en sus pueblos. Pensiones en sus capitales estatales. La geografía vuelve concreta la abstracción."
+      },
+      "cable": {
+        "name": "El Cable",
+        "sub": "The Wire · noticias en vivo",
+        "body": "Un feed en tiempo real que recoge cada artículo que menciona alguna entidad en nuestras bases de datos. Quién Gana se convierte en el lugar para rastrear las luchas en curso — no una campaña que se queda obsoleta, sino un archivo vivo al que pueden volver organizadores, periodistas e investigadores cada semana."
+      },
+      "herramientas": {
+        "name": "Las Herramientas",
+        "sub": "The Tools · kit de desinversión",
+        "body": "Cuando descubres que tu pensión está en Oaktree, necesitas un próximo paso. Cartas pre-escritas para los fideicomisarios. Resoluciones modelo para locales sindicales. Un rastreador de qué fondos se han desinvertido bajo presión. La pieza que la mayoría de proyectos de rendición de cuentas omiten — y la que convierte el tráfico en poder real."
+      },
+      "expediente": {
+        "name": "Completar el Expediente",
+        "sub": "Complete the Record · contribución abierta",
+        "body": "Para cada entrada en cada base de datos, cualquiera puede añadir documentación: fotos, recortes, expedientes, testimonios. Moderado, no libre para todo. Profundidad estilo wiki sin sacrificar calidad. El corpus crece sin que nuestro equipo escriba cada palabra."
+      }
+    }
+  },
+  "about": {
+    "label": "Quiénes somos",
+    "title": "Boricuas <em>Antifascistas.</em>",
+    "p1": "<strong>Somos puertorriqueños de la diáspora y de la isla</strong> construyendo infraestructura de rendición de cuentas al servicio de la descolonización. No somos un 501(c)3. No somos un think tank. No estamos esperando permiso.",
+    "p2": "Quién Gana existe porque la maquinaria de extracción colonial está documentada en fragmentos dispersos — expedientes judiciales aquí, divulgaciones de la SEC allá, registros de Hacienda en otro lado — pero los fragmentos no hablan entre sí. Las conexiones solo se enfocan cuando alguien insiste en juntarlas. Nosotros estamos insistiendo.",
+    "principles": [
+      {
+        "title": "Solo archivo público",
+        "body": "Cada afirmación se basa en documentos verificables. No difamamos — citamos."
+      },
+      {
+        "title": "Bilingüe por defecto",
+        "body": "Español e inglés desde el día uno. La diáspora y la isla leen la misma página."
+      },
+      {
+        "title": "Al servicio, no al frente",
+        "body": "Los organizadores en la isla lideran. Construimos herramientas que sirven sus luchas, no al revés."
+      },
+      {
+        "title": "Abierto a contribución",
+        "body": "Investigadores, periodistas, organizadores, familias afectadas — la plataforma es suya para extender."
+      }
+    ]
+  },
+  "intake": {
+    "label": "Participa",
+    "title": "Cuéntanos qué <em>estás</em> viendo.",
+    "intro": "La máquina depende de que nadie conecte los puntos. Los fideicomisarios de pensiones dependen de que sus miembros nunca miren. Los colonos de la Ley 60 dependen de ser invisibles a sus vecinos. Estamos haciendo una lista de gente que pueda cambiar eso.",
+    "audience": [
+      "Trabajador público cuya pensión está en estos fondos",
+      "Jubilado puertorriqueño con beneficios recortados",
+      "Vecino viendo desplazamiento de la Ley 60",
+      "Inquilino desplazado por conversión a alquiler corto",
+      "Periodista, investigador, u organizador listo para aplicar presión"
+    ],
+    "form": {
+      "name": "Nombre o alias",
+      "contact": "Email o Signal",
+      "circuit": "¿Qué circuito?",
+      "choose": "Selecciona uno",
+      "circuitOptions": [
+        "00 — Pensiones",
+        "01 — Ley 60 / Colonia Fiscal",
+        "02 — LUMA / Red eléctrica",
+        "03 — PROMESA / Deuda",
+        "04 — Contratistas del desastre",
+        "05 — Farma",
+        "06 — Tierra y desplazamiento",
+        "Múltiple / otra"
+      ],
+      "role": "Soy…",
+      "roleOptions": [
+        "Trabajador del sector público",
+        "Jubilado puertorriqueño / familia",
+        "Residente en la isla",
+        "Organizador de la diáspora",
+        "Miembro de sindicato",
+        "Periodista o investigador",
+        "Otra cosa"
+      ],
+      "message": "Qué quieres compartir, preguntar o reportar",
+      "submit": "Envíalo",
+      "note": "Nunca compartiremos o venderemos tu información. Encriptado. Te contestará una persona real."
+    }
+  },
+  "footer": {
+    "brandDesc": "Una plataforma de rendición de cuentas hecha por Boricuas Antifascistas. Rastreamos los circuitos coloniales que extraen riqueza de Puerto Rico — y conectamos a la gente en cada extremo del cable.",
+    "tagline": "“La colonia paga. Wall Street cobra.”",
+    "investigationsTitle": "Investigaciones",
+    "investigations": [
+      "00 · Pensiones",
+      "01 · Ley 60",
+      "02 · LUMA",
+      "03 · La Junta",
+      "04 · Contratos",
+      "05 · Farma",
+      "06 · Tierra"
+    ],
+    "infrastructureTitle": "Infraestructura",
+    "infrastructure": [
+      "El Mapa",
+      "El Cable",
+      "Las Herramientas",
+      "Completar",
+      "Metodología",
+      "Fuentes"
+    ],
+    "connectTitle": "Conecta",
+    "connect": ["Signal", "Mastodon", "Boletín", "Prensa", "Contribuye"],
+    "bottom": "Hecho por Boricuas Antifascistas · ¡Patria o muerte!",
+    "flagLabel": "Bandera Boricua · color original"
   },
   "auth": {
     "eyebrow": "Boricuas Antifascistas",

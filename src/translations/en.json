@@ -1,9 +1,206 @@
 {
-  "home": {
-    "eyebrow": "Boricuas Antifascistas",
-    "title": "Quién Gana",
-    "tagline": "Tracing the colonial circuits extracting wealth from Puerto Rico.",
-    "placeholder": "Home page under construction (Phase 1)."
+  "nav": {
+    "brandSub": "A Boricuas Antifascistas project",
+    "circuit": "The Circuit",
+    "investigations": "Investigations",
+    "infrastructure": "Infrastructure",
+    "about": "About",
+    "report": "Report"
+  },
+  "hero": {
+    "eyebrow": "An investigative platform · est. 2025",
+    "title": "The colony has many doors. <em>We're mapping them all.</em>",
+    "lede": "<strong>Quién Gana</strong> is a public-accountability platform that traces the colonial circuits moving wealth out of Puerto Rico — through pension raids, tax havens, disaster contracts, pharmaceutical extraction, energy privatization, real-estate displacement, and the federal debt machinery itself — and connects the people on every end of the wire.",
+    "ctaPrimary": "See the investigations",
+    "ctaSecondary": "Read the thesis"
+  },
+  "thesis": {
+    "label": "The thesis",
+    "title": "Not scandals. <em>A machine.</em>",
+    "p1": "Each story you've read about Puerto Rico — the debt crisis, LUMA, the crypto bros, Maria's missing billions, the privatized hospitals, the closed schools — is usually told as its own scandal. As if the actors were unrelated. As if the pattern were coincidence.",
+    "p2": "It isn't. It's <strong>one machine</strong> with many circuits. Federal law builds the channels. Wall Street and corporate America run product through them. The colony pays. The metropole collects. The same firms appear in case after case. The same Congressional moves enable each one.",
+    "p3": "Quién Gana documents the machine in public — circuit by circuit, name by name, dollar by dollar. We don't just expose extraction. We connect the wronged to the unwitting to the responsible, so that organizing becomes possible.",
+    "quote": "“La colonia paga. Wall Street cobra. El Congreso escribe las reglas para ambos.”"
+  },
+  "circuits": {
+    "label": "The investigations",
+    "title": "Seven circuits. <em>One machine.</em>",
+    "intro": "Each circuit is a separate investigation — its own data, its own actors, its own ground-level reality. Together they map the colonial extraction apparatus in motion.",
+    "sideLabel": "Status",
+    "sideValue": "Live · Building · Research",
+    "status": {
+      "live": "Live",
+      "building": "Building",
+      "urgent": "Urgent",
+      "research": "Research"
+    },
+    "ctaFeatured": "Open investigation",
+    "ctaDefault": "In progress",
+    "items": {
+      "pensiones": {
+        "mechanism": "Vulture funds bought Puerto Rico's retirement-system bonds at pennies on the dollar, then sued in bankruptcy court to take money from retired teachers and firefighters first. Their largest clients? Public pension funds in Oregon, Washington, New York, California, and beyond.",
+        "statLabel": "US public-pension money in vulture funds"
+      },
+      "coloniaFiscal": {
+        "mechanism": "Crypto bros and hedge funders relocate to Puerto Rico to pay near-zero capital gains and a 4% corporate rate — while displacing locals and contributing little. The beneficiaries are publicly listed at Hacienda. We're making the list useful.",
+        "statLabel": "Individual decree holders"
+      },
+      "luma": {
+        "mechanism": "LUMA Energy — a consortium of Canada's ATCO and Texas's Quanta Services — took over Puerto Rico's transmission and distribution grid in 2021. Outages got worse. Bills went up. Executive compensation soared. The contract terms remain largely opaque to the public it serves.",
+        "statLabel": "Contract length, ~$115M/yr base fee"
+      },
+      "laJunta": {
+        "mechanism": "The unelected fiscal control board still holds veto power over Puerto Rico's budget, laws, and labor protections — nearly a decade in. A live dashboard of where each month's tax revenue actually goes: debt service vs. schools, hospitals, infrastructure.",
+        "statLabel": "Restructured debt still being serviced"
+      },
+      "contratos": {
+        "mechanism": "Post-Maria, post-earthquake, post-Fiona: who got the FEMA, HUD, and Army Corps contracts? Whitefish Energy, COBRA, Tetra Tech, and dozens of others moved billions through Puerto Rico while rebuilding stalled. The data is on USASpending. We're making it readable.",
+        "statLabel": "Federal disaster funds appropriated"
+      },
+      "farma": {
+        "mechanism": "Look up the drugs you take — see if they're made in Puerto Rico, and which company books the profits there. Pfizer, AbbVie, Lilly, BMS, Amgen, and J&J use Puerto Rican subsidiaries to pay minimal effective rates on US-bound medications.",
+        "statLabel": "Of top 20 US drugs made in PR"
+      },
+      "desalojo": {
+        "mechanism": "Rincón, Aguadilla, Old San Juan, Vieques, Culebra. Long-term housing converts to Airbnb. Beachfront privatizes. Renters get pushed inland — or off the island entirely. Block by block, owner by owner, we're mapping who's buying and who's being pushed.",
+        "statLabel": "Active short-term rentals on the island"
+      }
+    }
+  },
+  "deepDive": {
+    "label": "Featured investigation",
+    "title": "00 — <em>The pension raid</em>",
+    "intro": "Look up your state, fund, or hedge firm. Public-pension exposure to the vulture funds that sued Puerto Rico's retirement system, drawn from court filings, SEC disclosures, and Delaware corporate records.",
+    "side": "Data window\n2017 — 2018 bankruptcy\nUpdates ongoing",
+    "shellTitle": "Public records query",
+    "liveData": "Live data",
+    "searchPlaceholder": "Try: Oregon, CalSTRS, Oaktree, New York…",
+    "chips": {
+      "all": "All",
+      "state": "State systems",
+      "teacher": "Teachers' funds",
+      "former": "Former exposure"
+    },
+    "comingSoon": "Live lookup arrives with the Pensiones circuit. For now, tell us what you're tracking below."
+  },
+  "infra": {
+    "label": "The infrastructure",
+    "title": "The platform <em>connects</em> the investigations.",
+    "intro": "Each circuit feeds the same infrastructure: a unified map of actors, a wire that surfaces every news mention, tools for divestment campaigns, and an open contribution layer.",
+    "items": {
+      "mapa": {
+        "name": "El Mapa",
+        "sub": "The Map · geographic view",
+        "body": "Every actor, on the map. Act 60 settlers pinned to their addresses. Disaster contractors at their project sites. Pharma plants in their towns. Pension funds in their state capitals. Geography turns abstraction into territory."
+      },
+      "cable": {
+        "name": "El Cable",
+        "sub": "The Wire · live news layer",
+        "body": "A real-time feed that surfaces every news article mentioning any entity in our databases. Quién Gana becomes the place to track ongoing fights — not a campaign that goes stale, but a living archive that organizers, journalists, and researchers can return to weekly."
+      },
+      "herramientas": {
+        "name": "Las Herramientas",
+        "sub": "The Tools · divestment toolkit",
+        "body": "Once you learn your pension is in Oaktree, you need a next step. Pre-written letters to fund trustees. Model resolutions for union locals. A tracker of which funds have divested under pressure. The piece most accountability projects skip — and the one that turns inbound traffic into actual power."
+      },
+      "expediente": {
+        "name": "Completar el Expediente",
+        "sub": "Complete the Record · open contribution",
+        "body": "For every entry in every database, anyone can add documentation: photos, news clippings, court filings, personal testimony. Moderated, not free-for-all. Wiki-style depth without surrendering quality. The corpus grows without our team doing every keystroke."
+      }
+    }
+  },
+  "about": {
+    "label": "Who we are",
+    "title": "Boricuas <em>Antifascistas.</em>",
+    "p1": "<strong>We are diaspora and on-island Puerto Ricans</strong> building public-accountability infrastructure in service of decolonization. We are not a 501(c)3. We are not a think tank. We are not waiting for permission.",
+    "p2": "Quién Gana exists because the colony's extraction machinery is documented in scattered fragments — court filings here, SEC disclosures there, Hacienda registries somewhere else — but the fragments don't talk to each other. The connections only come into focus when someone insists on putting them together. We're insisting.",
+    "principles": [
+      {
+        "title": "Public record only",
+        "body": "Every claim sources to documents anyone can verify. We don't smear — we cite."
+      },
+      {
+        "title": "Bilingual by default",
+        "body": "Spanish and English from day one. The diaspora and the island read the same page."
+      },
+      {
+        "title": "In service, not in front",
+        "body": "On-island organizers lead. We build tools that serve their fights, not the other way around."
+      },
+      {
+        "title": "Open to contribution",
+        "body": "Researchers, journalists, organizers, affected families — the platform is yours to extend."
+      }
+    ]
+  },
+  "intake": {
+    "label": "Get involved",
+    "title": "Tell us what <em>you're</em> seeing.",
+    "intro": "The machine relies on the fact that nobody connects the dots. Pension trustees rely on the fact that their members never look. Act 60 settlers rely on being invisible to their neighbors. We're building a list of people who can change that.",
+    "audience": [
+      "A public worker whose pension is in these funds",
+      "A Puerto Rican retiree whose benefits were cut",
+      "A neighbor watching Act 60 displacement firsthand",
+      "A renter pushed out by short-term-rental conversion",
+      "A journalist, researcher, or organizer ready to apply pressure"
+    ],
+    "form": {
+      "name": "Name or alias",
+      "contact": "Email or Signal",
+      "circuit": "Which circuit?",
+      "choose": "Choose one",
+      "circuitOptions": [
+        "00 — Pensions",
+        "01 — Act 60 / Colonia Fiscal",
+        "02 — LUMA / Energy grid",
+        "03 — PROMESA / Debt",
+        "04 — Disaster contractors",
+        "05 — Pharma",
+        "06 — Land & displacement",
+        "Multiple / other"
+      ],
+      "role": "I am a…",
+      "roleOptions": [
+        "Public-sector worker",
+        "Puerto Rican retiree / family",
+        "On-island resident",
+        "Diaspora organizer",
+        "Union member",
+        "Journalist or researcher",
+        "Something else"
+      ],
+      "message": "What you want to share, ask, or report",
+      "submit": "Send it in",
+      "note": "We will never share or sell your info. Encrypted at rest. You'll hear back from a real person."
+    }
+  },
+  "footer": {
+    "brandDesc": "A public-accountability platform built by Boricuas Antifascistas. We trace the colonial circuits that extract wealth from Puerto Rico — and we connect the people on every end of the wire.",
+    "tagline": "“La colonia paga. Wall Street cobra.”",
+    "investigationsTitle": "Investigations",
+    "investigations": [
+      "00 · Pensions",
+      "01 · Act 60",
+      "02 · LUMA",
+      "03 · La Junta",
+      "04 · Contracts",
+      "05 · Pharma",
+      "06 · Land"
+    ],
+    "infrastructureTitle": "Infrastructure",
+    "infrastructure": [
+      "El Mapa",
+      "El Cable",
+      "Las Herramientas",
+      "Completar",
+      "Methodology",
+      "Sources"
+    ],
+    "connectTitle": "Connect",
+    "connect": ["Signal", "Mastodon", "Newsletter", "Press", "Contribute"],
+    "bottom": "Built by Boricuas Antifascistas · ¡Patria o muerte!",
+    "flagLabel": "Bandera Boricua · color original"
   },
   "auth": {
     "eyebrow": "Boricuas Antifascistas",
