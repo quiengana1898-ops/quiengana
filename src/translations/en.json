@@ -203,6 +203,23 @@
     "bottom": "Built by Boricuas Antifascistas · ¡Patria o muerte!",
     "flagLabel": "Bandera Boricua · color original"
   },
+  "contratos": {
+    "eyebrow": "Circuit 04 · Live",
+    "title": "Disaster contractors",
+    "subtitle": "Los contratistas del desastre",
+    "intro": "After María, the earthquakes, and Fiona, billions in federal disaster money flowed through Puerto Rico. This is who got the contracts, pulled live from USASpending and reviewed before publishing.",
+    "dataNote": "Source: USASpending.gov, place of performance Puerto Rico. Figures are obligated amounts.",
+    "back": "All investigations",
+    "empty": "No published contracts yet. Publish from the admin staging queue to populate this page.",
+    "browser": {
+      "placeholder": "Search by contractor, agency, or keyword…",
+      "results": "{count, plural, =0 {No matches} one {# contract} other {# contracts}}",
+      "none": "No matches. Try a contractor or agency name.",
+      "contractor": "Contractor",
+      "agency": "Awarding agency",
+      "amount": "Amount"
+    }
+  },
   "pensiones": {
     "eyebrow": "Circuit 00 · Live",
     "title": "The pension raid",

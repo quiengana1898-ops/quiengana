@@ -43,6 +43,12 @@ export async function promoteContract(userId: string, id: string) {
   await audit(userId, "entities", contract.contractorId, "publish", "auto: contractor of published contract");
 }
 
+/** Publish many staged contracts (bulk valve action). Returns count promoted. */
+export async function promoteContracts(userId: string, ids: string[]) {
+  for (const id of ids) await promoteContract(userId, id);
+  return ids.length;
+}
+
 /** Reject a staged contract (never public → hard delete, audited). */
 export async function rejectContractRow(userId: string, id: string) {
   await db.delete(federalContracts).where(eq(federalContracts.id, id));

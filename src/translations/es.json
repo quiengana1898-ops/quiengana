@@ -204,6 +204,23 @@
     "bottom": "Hecho por Boricuas Antifascistas · ¡Patria o muerte!",
     "flagLabel": "Bandera Boricua · color original"
   },
+  "contratos": {
+    "eyebrow": "Circuito 04 · Activo",
+    "title": "Los contratistas del desastre",
+    "subtitle": "Disaster contractors",
+    "intro": "Después de María, los terremotos y Fiona, miles de millones en fondos federales de desastre pasaron por Puerto Rico. Estos son quienes consiguieron los contratos, extraídos en vivo de USASpending y revisados antes de publicar.",
+    "dataNote": "Fuente: USASpending.gov, lugar de ejecución Puerto Rico. Las cifras son montos obligados.",
+    "back": "Todas las investigaciones",
+    "empty": "Aún no hay contratos publicados. Publica desde la cola de revisión del admin para llenar esta página.",
+    "browser": {
+      "placeholder": "Busca por contratista, agencia o palabra clave…",
+      "results": "{count, plural, =0 {Sin resultados} one {# contrato} other {# contratos}}",
+      "none": "Sin resultados. Prueba el nombre de un contratista o agencia.",
+      "contractor": "Contratista",
+      "agency": "Agencia adjudicadora",
+      "amount": "Monto"
+    }
+  },
   "pensiones": {
     "eyebrow": "Circuito 00 · Activo",
     "title": "El asalto de pensiones",

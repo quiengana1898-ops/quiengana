@@ -4,6 +4,7 @@ import { revalidatePath } from "next/cache";
 
 import {
   promoteContract,
+  promoteContracts,
   promoteEntity,
   rejectContractRow,
   rejectEntityRow,
@@ -22,6 +23,13 @@ export async function publishContract(id: string) {
   await promoteContract(ctx.userId, id);
   revalidatePath("/admin/staging");
   return { ok: true };
+}
+
+export async function publishContracts(ids: string[]) {
+  const ctx = await requireModerator();
+  const count = await promoteContracts(ctx.userId, ids);
+  revalidatePath("/admin/staging");
+  return { ok: true, count };
 }
 
 export async function rejectContract(id: string) {

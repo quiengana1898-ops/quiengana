@@ -14,6 +14,8 @@ export type Circuit = {
   status: CircuitStatus;
   stat: string;
   featured?: boolean;
+  /** Set when the circuit page is live — its card becomes a link. */
+  href?: string;
   icon: ReactNode;
 };
 
@@ -34,6 +36,7 @@ export const circuits: Circuit[] = [
     status: "live",
     stat: "$1.2B+",
     featured: true,
+    href: "/circuitos/pensiones",
     icon: (
       <svg {...iconProps}>
         <circle cx="16" cy="16" r="13" />
@@ -89,8 +92,9 @@ export const circuits: Circuit[] = [
     code: "Contratos",
     nameEn: "Disaster contractors",
     nameEs: "Los contratistas del desastre",
-    status: "research",
+    status: "live",
     stat: "$80B+",
+    href: "/circuitos/contratos",
     icon: (
       <svg {...iconProps}>
         <path d="M6 14v12h20V14M4 14l12-8 12 8M16 26V18" />

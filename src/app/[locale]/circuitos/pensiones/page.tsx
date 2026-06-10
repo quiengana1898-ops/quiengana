@@ -7,6 +7,9 @@ import {
   getPensionInvestments,
 } from "@/lib/queries/pensiones";
 
+// Reflects published data immediately (admin publish/reject at runtime).
+export const dynamic = "force-dynamic";
+
 export default async function PensionesPage({
   params,
 }: {

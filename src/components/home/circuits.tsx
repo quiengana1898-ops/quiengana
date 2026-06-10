@@ -128,14 +128,14 @@ export function Circuits() {
                     featured ? "text-cream" : "text-ink",
                   )}
                 >
-                  {featured ? t("ctaFeatured") : t("ctaDefault")} →
+                  {c.href ? t("ctaFeatured") : t("ctaDefault")} →
                 </span>
               </div>
             </>
           );
 
-          return featured ? (
-            <Link key={c.id} href="/circuitos/pensiones" className={className}>
+          return c.href ? (
+            <Link key={c.id} href={c.href} className={className}>
               {inner}
             </Link>
           ) : (
