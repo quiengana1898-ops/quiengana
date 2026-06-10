@@ -1,0 +1,20 @@
+{
+  "home": {
+    "eyebrow": "Boricuas Antifascistas",
+    "title": "Quién Gana",
+    "tagline": "Tracing the colonial circuits extracting wealth from Puerto Rico.",
+    "placeholder": "Home page under construction (Phase 1)."
+  },
+  "auth": {
+    "eyebrow": "Boricuas Antifascistas",
+    "title": "Sign in",
+    "subtitle": "We'll email you a secure sign-in link. No password.",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@example.com",
+    "submit": "Send link",
+    "sending": "Sending…",
+    "sent": "Link sent",
+    "checkEmail": "Check {email} for a sign-in link.",
+    "error": "Something went wrong. Try again."
+  }
+}

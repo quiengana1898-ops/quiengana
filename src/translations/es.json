@@ -1,0 +1,20 @@
+{
+  "home": {
+    "eyebrow": "Boricuas Antifascistas",
+    "title": "Quién Gana",
+    "tagline": "Rastreando los circuitos coloniales que extraen la riqueza de Puerto Rico.",
+    "placeholder": "Página de inicio en construcción (Fase 1)."
+  },
+  "auth": {
+    "eyebrow": "Boricuas Antifascistas",
+    "title": "Iniciar sesión",
+    "subtitle": "Te enviaremos un enlace seguro por correo. Sin contraseña.",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "tu@ejemplo.com",
+    "submit": "Enviar enlace",
+    "sending": "Enviando…",
+    "sent": "Enlace enviado",
+    "checkEmail": "Revisa {email} para el enlace de acceso.",
+    "error": "Algo salió mal. Intenta de nuevo."
+  }
+}
