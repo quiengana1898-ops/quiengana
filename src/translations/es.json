@@ -82,7 +82,8 @@
       "teacher": "Fondos de maestros",
       "former": "Exposición previa"
     },
-    "comingSoon": "La búsqueda en vivo llega con el circuito de Pensiones. Por ahora, cuéntanos qué estás rastreando abajo."
+    "comingSoon": "La búsqueda en vivo llega con el circuito de Pensiones. Por ahora, cuéntanos qué estás rastreando abajo.",
+    "openLookup": "Abrir la búsqueda"
   },
   "infra": {
     "label": "La infraestructura",
@@ -202,6 +203,41 @@
     "connect": ["Signal", "Mastodon", "Boletín", "Prensa", "Contribuye"],
     "bottom": "Hecho por Boricuas Antifascistas · ¡Patria o muerte!",
     "flagLabel": "Bandera Boricua · color original"
+  },
+  "pensiones": {
+    "eyebrow": "Circuito 00 · Activo",
+    "title": "El asalto de pensiones",
+    "subtitle": "The pension raid",
+    "intro": "Los fondos buitre compraron los bonos del sistema de retiro de Puerto Rico por centavos, luego demandaron en quiebra para cobrar antes que los maestros y bomberos jubilados. Su dinero vino de fondos públicos de pensiones de EE.UU. Busca tu estado, tu fondo, o la firma.",
+    "dataWindow": "Las tenencias reflejan la quiebra PROMESA Título III de 2017-2018. Las cifras provienen del archivo público de ese período.",
+    "lookup": {
+      "placeholder": "Prueba: Oregon, CalSTRS, Oaktree, Nueva York…",
+      "all": "Todo",
+      "state": "Sistemas estatales",
+      "teacher": "Fondos de maestros",
+      "former": "Exposición previa",
+      "via": "vía",
+      "results": "{count, plural, =0 {Sin resultados} one {# resultado} other {# resultados}}",
+      "none": "Sin resultados. Prueba un estado, un fondo, o el nombre de una firma."
+    },
+    "claimsTitle": "Lo que reclamaron los buitres",
+    "claimsIntro": "En el litigio de bonos del ERS, estos fondos presentaron reclamos contra el sistema de retiro de Puerto Rico. Algunos los canalizaron mediante entidades pantalla.",
+    "claimsClaimed": "Reclamado",
+    "claimsShell": "vía pantalla",
+    "back": "Todas las investigaciones",
+    "entity": {
+      "pensionFund": "Fondo público de pensiones",
+      "hedgeFund": "Fondo buitre",
+      "jurisdiction": "Jurisdicción",
+      "investmentsPF": "Dinero en fondos buitre",
+      "investmentsHF": "Dinero de pensiones recibido",
+      "claimsTitle": "Reclamos en la quiebra del ERS",
+      "via": "vía",
+      "shell": "pantalla",
+      "none": "Aún no hay registros publicados.",
+      "source": "Fuente",
+      "back": "Volver al asalto de pensiones"
+    }
   },
   "auth": {
     "eyebrow": "Boricuas Antifascistas",

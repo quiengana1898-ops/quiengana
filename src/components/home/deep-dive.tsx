@@ -1,6 +1,7 @@
 import { useTranslations } from "next-intl";
 
 import { SectionHead } from "@/components/section-head";
+import { Link } from "@/i18n/navigation";
 import { richTags } from "@/i18n/rich";
 
 // Presentational stub — the live pension lookup is wired in Phase 2.
@@ -57,9 +58,12 @@ export function DeepDive() {
                 </span>
               ))}
             </div>
-            <p className="rounded-xs border border-dashed border-ink-line-strong px-5 py-8 text-center font-mono text-xs uppercase tracking-[0.1em] text-ink-faint">
-              {t("comingSoon")}
-            </p>
+            <Link
+              href="/circuitos/pensiones"
+              className="flex items-center justify-center gap-2 rounded-xs bg-rojo px-5 py-4 text-[13px] font-semibold uppercase tracking-[0.14em] text-cream no-underline transition-colors hover:bg-rojo-deep"
+            >
+              {t("openLookup")} →
+            </Link>
           </div>
         </div>
       </div>

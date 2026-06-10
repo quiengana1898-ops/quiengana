@@ -1,6 +1,7 @@
 import { useLocale, useTranslations } from "next-intl";
 
 import { SectionHead } from "@/components/section-head";
+import { Link } from "@/i18n/navigation";
 import { circuits, type CircuitStatus } from "@/lib/circuits";
 import { richTags } from "@/i18n/rich";
 import { cn } from "@/lib/utils";
@@ -30,19 +31,15 @@ export function Circuits() {
           const featured = !!c.featured;
           const main = locale === "es" ? c.nameEs : c.nameEn;
           const other = locale === "es" ? c.nameEn : c.nameEs;
-          const Wrapper = featured ? "a" : "div";
-
-          return (
-            <Wrapper
-              key={c.id}
-              {...(featured ? { href: "#deep-dive" } : {})}
-              className={cn(
-                "group flex min-h-[320px] flex-col gap-4 p-8 no-underline transition-colors",
-                featured
-                  ? "col-span-2 bg-ink text-cream hover:bg-[#1a2228] max-[720px]:col-span-1"
-                  : "bg-cream text-ink hover:bg-celeste-mist",
-              )}
-            >
+          // Pensiones (featured) is live — link to its circuit page; others inert for now.
+          const className = cn(
+            "group flex min-h-[320px] flex-col gap-4 p-8 no-underline transition-colors",
+            featured
+              ? "col-span-2 bg-ink text-cream hover:bg-[#1a2228] max-[720px]:col-span-1"
+              : "bg-cream text-ink hover:bg-celeste-mist",
+          );
+          const inner = (
+            <>
               <div className="flex items-center justify-between">
                 <span
                   className={cn(
@@ -134,7 +131,17 @@ export function Circuits() {
                   {featured ? t("ctaFeatured") : t("ctaDefault")} →
                 </span>
               </div>
-            </Wrapper>
+            </>
+          );
+
+          return featured ? (
+            <Link key={c.id} href="/circuitos/pensiones" className={className}>
+              {inner}
+            </Link>
+          ) : (
+            <div key={c.id} className={className}>
+              {inner}
+            </div>
           );
         })}
       </div>

@@ -81,7 +81,8 @@
       "teacher": "Teachers' funds",
       "former": "Former exposure"
     },
-    "comingSoon": "Live lookup arrives with the Pensiones circuit. For now, tell us what you're tracking below."
+    "comingSoon": "Live lookup arrives with the Pensiones circuit. For now, tell us what you're tracking below.",
+    "openLookup": "Open the lookup"
   },
   "infra": {
     "label": "The infrastructure",
@@ -201,6 +202,41 @@
     "connect": ["Signal", "Mastodon", "Newsletter", "Press", "Contribute"],
     "bottom": "Built by Boricuas Antifascistas · ¡Patria o muerte!",
     "flagLabel": "Bandera Boricua · color original"
+  },
+  "pensiones": {
+    "eyebrow": "Circuit 00 · Live",
+    "title": "The pension raid",
+    "subtitle": "El asalto de pensiones",
+    "intro": "Vulture funds bought Puerto Rico's retirement-system bonds for pennies, then sued in bankruptcy court to be paid ahead of retired teachers and firefighters. Their money came from US public pension funds. Look up your state, your fund, or the firm.",
+    "dataWindow": "Holdings reflect the 2017-2018 PROMESA Title III bankruptcy. Figures are from the public record as of that window.",
+    "lookup": {
+      "placeholder": "Try: Oregon, CalSTRS, Oaktree, New York…",
+      "all": "All",
+      "state": "State systems",
+      "teacher": "Teachers' funds",
+      "former": "Former exposure",
+      "via": "via",
+      "results": "{count, plural, =0 {No matches} one {# result} other {# results}}",
+      "none": "No matches. Try a state, a fund, or a firm name."
+    },
+    "claimsTitle": "What the vultures claimed",
+    "claimsIntro": "In the ERS bond litigation, these funds filed claims against Puerto Rico's retirement system. Some routed their claims through shell entities.",
+    "claimsClaimed": "Claimed",
+    "claimsShell": "via shell",
+    "back": "All investigations",
+    "entity": {
+      "pensionFund": "Public pension fund",
+      "hedgeFund": "Vulture fund",
+      "jurisdiction": "Jurisdiction",
+      "investmentsPF": "Money in vulture funds",
+      "investmentsHF": "Pension money received",
+      "claimsTitle": "ERS bankruptcy claims",
+      "via": "via",
+      "shell": "shell",
+      "none": "No published records yet.",
+      "source": "Source",
+      "back": "Back to the pension raid"
+    }
   },
   "auth": {
     "eyebrow": "Boricuas Antifascistas",
