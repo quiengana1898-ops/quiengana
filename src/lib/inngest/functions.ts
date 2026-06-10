@@ -11,7 +11,8 @@ const contratosPull = inngest.createFunction(
     triggers: [{ cron: "0 6 * * 1" }],
   },
   async ({ step }) => {
-    return step.run("pull", () => pullUsaspending({ maxPages: 10 }));
+    // Authoritative public-record source → publish on ingest.
+    return step.run("pull", () => pullUsaspending({ maxPages: 20, publish: true }));
   },
 );
 

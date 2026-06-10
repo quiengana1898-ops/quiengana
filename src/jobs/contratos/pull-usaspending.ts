@@ -91,11 +91,19 @@ export async function fetchPrContracts(
 }
 
 /**
- * Write awards to STAGING (is_published=false): upsert one contractor entity per
- * recipient, upsert the contract. Idempotent (entities by slug, contracts by
- * contract_id). Never auto-publishes — a human promotes via /admin.
+ * Upsert one contractor entity per recipient + the contract. Idempotent
+ * (entities by slug, contracts by contract_id).
+ *
+ * `publish: true` ingests directly to PUBLIC — appropriate for authoritative
+ * public-record sources like USASpending, where the source IS the verification
+ * (the strict staging→review gate is reserved for scraped / individual-naming
+ * circuits). Default false = staging.
  */
-export async function ingestAwards(awards: UsaspendingAward[]) {
+export async function ingestAwards(
+  awards: UsaspendingAward[],
+  opts: { publish?: boolean } = {},
+) {
+  const publish = !!opts.publish;
   let created = 0;
   let updated = 0;
 
@@ -104,7 +112,6 @@ export async function ingestAwards(awards: UsaspendingAward[]) {
     const recipient = str(a["Recipient Name"]);
     if (!contractId || !recipient) continue;
 
-    // Contractor entity (staging). On conflict, keep existing publish state.
     const slug = slugify(recipient);
     const [ent] = await db
       .insert(entities)
@@ -112,11 +119,14 @@ export async function ingestAwards(awards: UsaspendingAward[]) {
         entityType: "contractor",
         displayName: recipient,
         slug,
-        isPublished: false,
+        isPublished: publish,
       })
       .onConflictDoUpdate({
         target: entities.slug,
-        set: { updatedAt: new Date() },
+        // Promote to public if publishing; never un-publish an existing entity.
+        set: publish
+          ? { isPublished: true, updatedAt: new Date() }
+          : { updatedAt: new Date() },
       })
       .returning({ id: entities.id });
 
@@ -134,7 +144,7 @@ export async function ingestAwards(awards: UsaspendingAward[]) {
       description: str(a.Description),
       sourceUrl: `https://www.usaspending.gov/award/${contractId}`,
       rawData: a,
-      isPublished: false,
+      isPublished: publish,
     };
 
     const res = await db
@@ -149,6 +159,7 @@ export async function ingestAwards(awards: UsaspendingAward[]) {
           currentAmountUsd: values.currentAmountUsd,
           description: values.description,
           rawData: values.rawData,
+          isPublished: values.isPublished,
         },
       })
       .returning({ inserted: sql<boolean>`(xmax = 0)` });
@@ -161,7 +172,7 @@ export async function ingestAwards(awards: UsaspendingAward[]) {
 }
 
 /** Full job: fetch + ingest, wrapped in a job_runs record for observability. */
-export async function pullUsaspending(opts: FetchOpts = {}) {
+export async function pullUsaspending(opts: FetchOpts & { publish?: boolean } = {}) {
   const [run] = await db
     .insert(jobRuns)
     .values({ jobName: JOB_NAME, status: "running", startedAt: new Date() })
@@ -169,7 +180,9 @@ export async function pullUsaspending(opts: FetchOpts = {}) {
 
   try {
     const awards = await fetchPrContracts(opts);
-    const { created, updated, processed } = await ingestAwards(awards);
+    const { created, updated, processed } = await ingestAwards(awards, {
+      publish: opts.publish,
+    });
     await db
       .update(jobRuns)
       .set({
