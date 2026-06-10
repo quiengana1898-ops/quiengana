@@ -12,7 +12,8 @@
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
     "seed:pensiones": "tsx scripts/seed-pension-data.ts",
-    "ingest:contratos": "tsx scripts/run-contratos.ts"
+    "ingest:contratos": "tsx scripts/run-contratos.ts",
+    "admin:grant": "tsx scripts/grant-role.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",

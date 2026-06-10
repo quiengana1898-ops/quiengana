@@ -14,7 +14,7 @@ export default async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  // Run on everything except API/auth route handlers, Next internals, and files
-  // with an extension. /auth/* are non-localized machine endpoints.
-  matcher: ["/((?!api|auth|_next|_vercel|.*\\..*).*)"],
+  // Run on everything except API/auth/admin, Next internals, and files with an
+  // extension. /auth/* are machine endpoints; /admin is a non-localized panel.
+  matcher: ["/((?!api|auth|admin|_next|_vercel|.*\\..*).*)"],
 };
