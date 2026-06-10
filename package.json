@@ -11,7 +11,8 @@
     "db:migrate": "drizzle-kit migrate",
     "db:push": "drizzle-kit push",
     "db:studio": "drizzle-kit studio",
-    "seed:pensiones": "tsx scripts/seed-pension-data.ts"
+    "seed:pensiones": "tsx scripts/seed-pension-data.ts",
+    "ingest:contratos": "tsx scripts/run-contratos.ts"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
@@ -20,6 +21,7 @@
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.45.2",
+    "inngest": "^4.5.1",
     "lucide-react": "^1.17.0",
     "next": "16.2.7",
     "next-intl": "^4.13.0",
