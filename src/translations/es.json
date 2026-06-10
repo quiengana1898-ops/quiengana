@@ -1,5 +1,5 @@
 {
-  "_note": "Spanish copy is from the design mockup — DRAFT pending native Puerto Rican review before launch (CLAUDE.md §5 / SPEC §8). Do not treat as final.",
+  "_note": "Spanish copy is from the design mockup. DRAFT pending native Puerto Rican review before launch (CLAUDE.md §5 / SPEC §8). Do not treat as final.",
   "nav": {
     "brandSub": "Un proyecto de Boricuas Antifascistas",
     "circuit": "El Circuito",
@@ -11,22 +11,22 @@
   "hero": {
     "eyebrow": "Plataforma investigativa · est. 2025",
     "title": "La colonia tiene muchas puertas. <em>Las estamos mapeando todas.</em>",
-    "lede": "<strong>Quién Gana</strong> es una plataforma de rendición de cuentas que rastrea los circuitos coloniales que extraen riqueza de Puerto Rico — a través de fondos de pensiones, paraísos fiscales, contratos de desastre, extracción farmacéutica, privatización energética, desplazamiento, y la maquinaria de la deuda federal — y conecta a la gente afectada en cada extremo del circuito.",
+    "lede": "<strong>Quién Gana</strong> es una plataforma de rendición de cuentas que rastrea los circuitos coloniales que extraen riqueza de Puerto Rico: fondos de pensiones, paraísos fiscales, contratos de desastre, extracción farmacéutica, privatización energética, desplazamiento, y la maquinaria de la deuda federal. Conecta a la gente afectada en cada extremo del circuito.",
     "ctaPrimary": "Ver las investigaciones",
     "ctaSecondary": "Lee la tesis"
   },
   "thesis": {
     "label": "La tesis",
     "title": "No son escándalos. <em>Es una máquina.</em>",
-    "p1": "Cada historia que has leído sobre Puerto Rico — la crisis de la deuda, LUMA, los criptobros, los miles de millones desaparecidos de María, los hospitales privatizados, las escuelas cerradas — suele contarse como un escándalo aparte. Como si los actores no estuvieran relacionados. Como si el patrón fuera coincidencia.",
+    "p1": "Cada historia que has leído sobre Puerto Rico (la crisis de la deuda, LUMA, los criptobros, los miles de millones desaparecidos de María, los hospitales privatizados, las escuelas cerradas) suele contarse como un escándalo aparte. Como si los actores no estuvieran relacionados. Como si el patrón fuera coincidencia.",
     "p2": "No lo es. Es <strong>una máquina</strong> con muchos circuitos. La ley federal construye los canales. Wall Street y las corporaciones mueven el producto. La colonia paga. La metrópolis cobra. Las mismas firmas aparecen caso tras caso. Las mismas movidas del Congreso habilitan cada una.",
-    "p3": "Quién Gana documenta la máquina en público — circuito por circuito, nombre por nombre, dólar por dólar. No solo exponemos la extracción. Conectamos a los afectados con los cómplices involuntarios y los responsables, para que la organización sea posible.",
+    "p3": "Quién Gana documenta la máquina en público, circuito por circuito, nombre por nombre, dólar por dólar. No solo exponemos la extracción. Conectamos a los afectados con los cómplices involuntarios y los responsables, para que la organización sea posible.",
     "quote": "“La colonia paga. Wall Street cobra. El Congreso escribe las reglas para ambos.”"
   },
   "circuits": {
     "label": "Las investigaciones",
     "title": "Siete circuitos. <em>Una máquina.</em>",
-    "intro": "Cada circuito es una investigación aparte — sus propios datos, sus propios actores, su propia realidad sobre el terreno. Juntos mapean el aparato colonial de extracción en movimiento.",
+    "intro": "Cada circuito es una investigación aparte: sus propios datos, sus propios actores, su propia realidad sobre el terreno. Juntos mapean el aparato colonial de extracción en movimiento.",
     "sideLabel": "Estado",
     "sideValue": "Activo · Construyendo · Investigando",
     "status": {
@@ -43,15 +43,15 @@
         "statLabel": "Pensiones públicas en fondos buitre"
       },
       "coloniaFiscal": {
-        "mechanism": "Criptobros y administradores de hedge funds se mudan a Puerto Rico para pagar casi nada en ganancias de capital y 4% corporativo — mientras desplazan a la gente local. Los beneficiarios están listados públicamente en Hacienda. Estamos haciendo esa lista útil.",
+        "mechanism": "Criptobros y administradores de hedge funds se mudan a Puerto Rico para pagar casi nada en ganancias de capital y 4% corporativo, mientras desplazan a la gente local. Los beneficiarios están listados públicamente en Hacienda. Estamos haciendo esa lista útil.",
         "statLabel": "Beneficiarios individuales"
       },
       "luma": {
-        "mechanism": "LUMA Energy — un consorcio de ATCO de Canadá y Quanta Services de Texas — tomó control de la red eléctrica de Puerto Rico en 2021. Los apagones empeoraron. Las facturas subieron. La compensación ejecutiva se disparó. Los términos del contrato siguen siendo opacos para el pueblo al que sirve.",
+        "mechanism": "LUMA Energy (un consorcio de ATCO de Canadá y Quanta Services de Texas) tomó control de la red eléctrica de Puerto Rico en 2021. Los apagones empeoraron. Las facturas subieron. La compensación ejecutiva se disparó. Los términos del contrato siguen siendo opacos para el pueblo al que sirve.",
         "statLabel": "Duración del contrato, ~$115M/año"
       },
       "laJunta": {
-        "mechanism": "La junta de control fiscal no electa todavía mantiene poder de veto sobre el presupuesto, las leyes, y las protecciones laborales de Puerto Rico — casi una década después. Un dashboard en vivo de adónde va realmente cada mes el dinero público: servicio de deuda vs. escuelas, hospitales, infraestructura.",
+        "mechanism": "La junta de control fiscal no electa todavía mantiene poder de veto sobre el presupuesto, las leyes, y las protecciones laborales de Puerto Rico, casi una década después. Un dashboard en vivo de adónde va realmente cada mes el dinero público: servicio de deuda vs. escuelas, hospitales, infraestructura.",
         "statLabel": "Deuda reestructurada que se sigue pagando"
       },
       "contratos": {
@@ -59,20 +59,20 @@
         "statLabel": "Fondos federales de desastre asignados"
       },
       "farma": {
-        "mechanism": "Busca los medicamentos que tomas — ve si se fabrican en Puerto Rico, y qué compañía registra las ganancias allí. Pfizer, AbbVie, Lilly, BMS, Amgen, y J&J usan subsidiarias puertorriqueñas para pagar tasas mínimas sobre medicamentos destinados a EE.UU.",
+        "mechanism": "Busca los medicamentos que tomas: ve si se fabrican en Puerto Rico, y qué compañía registra las ganancias allí. Pfizer, AbbVie, Lilly, BMS, Amgen, y J&J usan subsidiarias puertorriqueñas para pagar tasas mínimas sobre medicamentos destinados a EE.UU.",
         "statLabel": "De los 20 medicamentos top hechos en PR"
       },
       "desalojo": {
-        "mechanism": "Rincón, Aguadilla, Viejo San Juan, Vieques, Culebra. La vivienda a largo plazo se convierte en Airbnb. La costa se privatiza. Los inquilinos son empujados hacia adentro — o fuera de la isla. Cuadra por cuadra, dueño por dueño, mapeamos quién compra y quién es desplazado.",
+        "mechanism": "Rincón, Aguadilla, Viejo San Juan, Vieques, Culebra. La vivienda a largo plazo se convierte en Airbnb. La costa se privatiza. Los inquilinos son empujados hacia adentro, o fuera de la isla. Cuadra por cuadra, dueño por dueño, mapeamos quién compra y quién es desplazado.",
         "statLabel": "Alquileres a corto plazo activos en la isla"
       }
     }
   },
   "deepDive": {
     "label": "Investigación destacada",
-    "title": "00 — <em>El asalto de pensiones</em>",
+    "title": "00 · <em>El asalto de pensiones</em>",
     "intro": "Busca tu estado, fondo o firma. Exposición de las pensiones públicas a los fondos buitre que demandaron al sistema de retiro de Puerto Rico, basado en expedientes judiciales, registros de la SEC y registros corporativos de Delaware.",
-    "side": "Período\nQuiebra 2017—2018\nActualizaciones en curso",
+    "side": "Período\nQuiebra 2017-2018\nActualizaciones en curso",
     "shellTitle": "Consulta de archivos públicos",
     "liveData": "Datos activos",
     "searchPlaceholder": "Prueba: Oregon, CalSTRS, Oaktree, Nueva York…",
@@ -97,12 +97,12 @@
       "cable": {
         "name": "El Cable",
         "sub": "The Wire · noticias en vivo",
-        "body": "Un feed en tiempo real que recoge cada artículo que menciona alguna entidad en nuestras bases de datos. Quién Gana se convierte en el lugar para rastrear las luchas en curso — no una campaña que se queda obsoleta, sino un archivo vivo al que pueden volver organizadores, periodistas e investigadores cada semana."
+        "body": "Un feed en tiempo real que recoge cada artículo que menciona alguna entidad en nuestras bases de datos. Quién Gana se convierte en el lugar para rastrear las luchas en curso: no una campaña que se queda obsoleta, sino un archivo vivo al que pueden volver organizadores, periodistas e investigadores cada semana."
       },
       "herramientas": {
         "name": "Las Herramientas",
         "sub": "The Tools · kit de desinversión",
-        "body": "Cuando descubres que tu pensión está en Oaktree, necesitas un próximo paso. Cartas pre-escritas para los fideicomisarios. Resoluciones modelo para locales sindicales. Un rastreador de qué fondos se han desinvertido bajo presión. La pieza que la mayoría de proyectos de rendición de cuentas omiten — y la que convierte el tráfico en poder real."
+        "body": "Cuando descubres que tu pensión está en Oaktree, necesitas un próximo paso. Cartas pre-escritas para los fideicomisarios. Resoluciones modelo para locales sindicales. Un rastreador de qué fondos se han desinvertido bajo presión. La pieza que la mayoría de proyectos de rendición de cuentas omiten, y la que convierte el tráfico en poder real."
       },
       "expediente": {
         "name": "Completar el Expediente",
@@ -115,11 +115,11 @@
     "label": "Quiénes somos",
     "title": "Boricuas <em>Antifascistas.</em>",
     "p1": "<strong>Somos puertorriqueños de la diáspora y de la isla</strong> construyendo infraestructura de rendición de cuentas al servicio de la descolonización. No somos un 501(c)3. No somos un think tank. No estamos esperando permiso.",
-    "p2": "Quién Gana existe porque la maquinaria de extracción colonial está documentada en fragmentos dispersos — expedientes judiciales aquí, divulgaciones de la SEC allá, registros de Hacienda en otro lado — pero los fragmentos no hablan entre sí. Las conexiones solo se enfocan cuando alguien insiste en juntarlas. Nosotros estamos insistiendo.",
+    "p2": "Quién Gana existe porque la maquinaria de extracción colonial está documentada en fragmentos dispersos (expedientes judiciales aquí, divulgaciones de la SEC allá, registros de Hacienda en otro lado), pero los fragmentos no hablan entre sí. Las conexiones solo se enfocan cuando alguien insiste en juntarlas. Nosotros estamos insistiendo.",
     "principles": [
       {
         "title": "Solo archivo público",
-        "body": "Cada afirmación se basa en documentos verificables. No difamamos — citamos."
+        "body": "Cada afirmación se basa en documentos verificables. No difamamos; citamos."
       },
       {
         "title": "Bilingüe por defecto",
@@ -131,7 +131,7 @@
       },
       {
         "title": "Abierto a contribución",
-        "body": "Investigadores, periodistas, organizadores, familias afectadas — la plataforma es suya para extender."
+        "body": "Investigadores, periodistas, organizadores, familias afectadas: la plataforma es suya para extender."
       }
     ]
   },
@@ -152,13 +152,13 @@
       "circuit": "¿Qué circuito?",
       "choose": "Selecciona uno",
       "circuitOptions": [
-        "00 — Pensiones",
-        "01 — Ley 60 / Colonia Fiscal",
-        "02 — LUMA / Red eléctrica",
-        "03 — PROMESA / Deuda",
-        "04 — Contratistas del desastre",
-        "05 — Farma",
-        "06 — Tierra y desplazamiento",
+        "00 · Pensiones",
+        "01 · Ley 60 / Colonia Fiscal",
+        "02 · LUMA / Red eléctrica",
+        "03 · PROMESA / Deuda",
+        "04 · Contratistas del desastre",
+        "05 · Farma",
+        "06 · Tierra y desplazamiento",
         "Múltiple / otra"
       ],
       "role": "Soy…",
@@ -177,7 +177,7 @@
     }
   },
   "footer": {
-    "brandDesc": "Una plataforma de rendición de cuentas hecha por Boricuas Antifascistas. Rastreamos los circuitos coloniales que extraen riqueza de Puerto Rico — y conectamos a la gente en cada extremo del cable.",
+    "brandDesc": "Una plataforma de rendición de cuentas hecha por Boricuas Antifascistas. Rastreamos los circuitos coloniales que extraen riqueza de Puerto Rico, y conectamos a la gente en cada extremo del cable.",
     "tagline": "“La colonia paga. Wall Street cobra.”",
     "investigationsTitle": "Investigaciones",
     "investigations": [

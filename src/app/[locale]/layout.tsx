@@ -33,7 +33,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Quién Gana — Boricuas Antifascistas",
+  title: "Quién Gana · Boricuas Antifascistas",
   description:
     "A public-accountability platform tracing the colonial circuits extracting wealth from Puerto Rico.",
 };

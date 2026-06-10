@@ -10,22 +10,22 @@
   "hero": {
     "eyebrow": "An investigative platform · est. 2025",
     "title": "The colony has many doors. <em>We're mapping them all.</em>",
-    "lede": "<strong>Quién Gana</strong> is a public-accountability platform that traces the colonial circuits moving wealth out of Puerto Rico — through pension raids, tax havens, disaster contracts, pharmaceutical extraction, energy privatization, real-estate displacement, and the federal debt machinery itself — and connects the people on every end of the wire.",
+    "lede": "<strong>Quién Gana</strong> is a public-accountability platform that traces the colonial circuits moving wealth out of Puerto Rico: pension raids, tax havens, disaster contracts, pharmaceutical extraction, energy privatization, real-estate displacement, and the federal debt machinery itself. It connects the people on every end of the wire.",
     "ctaPrimary": "See the investigations",
     "ctaSecondary": "Read the thesis"
   },
   "thesis": {
     "label": "The thesis",
     "title": "Not scandals. <em>A machine.</em>",
-    "p1": "Each story you've read about Puerto Rico — the debt crisis, LUMA, the crypto bros, Maria's missing billions, the privatized hospitals, the closed schools — is usually told as its own scandal. As if the actors were unrelated. As if the pattern were coincidence.",
+    "p1": "Each story you've read about Puerto Rico (the debt crisis, LUMA, the crypto bros, Maria's missing billions, the privatized hospitals, the closed schools) is usually told as its own scandal. As if the actors were unrelated. As if the pattern were coincidence.",
     "p2": "It isn't. It's <strong>one machine</strong> with many circuits. Federal law builds the channels. Wall Street and corporate America run product through them. The colony pays. The metropole collects. The same firms appear in case after case. The same Congressional moves enable each one.",
-    "p3": "Quién Gana documents the machine in public — circuit by circuit, name by name, dollar by dollar. We don't just expose extraction. We connect the wronged to the unwitting to the responsible, so that organizing becomes possible.",
+    "p3": "Quién Gana documents the machine in public, circuit by circuit, name by name, dollar by dollar. We don't just expose extraction. We connect the wronged to the unwitting to the responsible, so that organizing becomes possible.",
     "quote": "“La colonia paga. Wall Street cobra. El Congreso escribe las reglas para ambos.”"
   },
   "circuits": {
     "label": "The investigations",
     "title": "Seven circuits. <em>One machine.</em>",
-    "intro": "Each circuit is a separate investigation — its own data, its own actors, its own ground-level reality. Together they map the colonial extraction apparatus in motion.",
+    "intro": "Each circuit is a separate investigation: its own data, its own actors, its own ground-level reality. Together they map the colonial extraction apparatus in motion.",
     "sideLabel": "Status",
     "sideValue": "Live · Building · Research",
     "status": {
@@ -42,15 +42,15 @@
         "statLabel": "US public-pension money in vulture funds"
       },
       "coloniaFiscal": {
-        "mechanism": "Crypto bros and hedge funders relocate to Puerto Rico to pay near-zero capital gains and a 4% corporate rate — while displacing locals and contributing little. The beneficiaries are publicly listed at Hacienda. We're making the list useful.",
+        "mechanism": "Crypto bros and hedge funders relocate to Puerto Rico to pay near-zero capital gains and a 4% corporate rate, while displacing locals and contributing little. The beneficiaries are publicly listed at Hacienda. We're making the list useful.",
         "statLabel": "Individual decree holders"
       },
       "luma": {
-        "mechanism": "LUMA Energy — a consortium of Canada's ATCO and Texas's Quanta Services — took over Puerto Rico's transmission and distribution grid in 2021. Outages got worse. Bills went up. Executive compensation soared. The contract terms remain largely opaque to the public it serves.",
+        "mechanism": "LUMA Energy (a consortium of Canada's ATCO and Texas's Quanta Services) took over Puerto Rico's transmission and distribution grid in 2021. Outages got worse. Bills went up. Executive compensation soared. The contract terms remain largely opaque to the public it serves.",
         "statLabel": "Contract length, ~$115M/yr base fee"
       },
       "laJunta": {
-        "mechanism": "The unelected fiscal control board still holds veto power over Puerto Rico's budget, laws, and labor protections — nearly a decade in. A live dashboard of where each month's tax revenue actually goes: debt service vs. schools, hospitals, infrastructure.",
+        "mechanism": "The unelected fiscal control board still holds veto power over Puerto Rico's budget, laws, and labor protections, nearly a decade in. A live dashboard of where each month's tax revenue actually goes: debt service vs. schools, hospitals, infrastructure.",
         "statLabel": "Restructured debt still being serviced"
       },
       "contratos": {
@@ -58,20 +58,20 @@
         "statLabel": "Federal disaster funds appropriated"
       },
       "farma": {
-        "mechanism": "Look up the drugs you take — see if they're made in Puerto Rico, and which company books the profits there. Pfizer, AbbVie, Lilly, BMS, Amgen, and J&J use Puerto Rican subsidiaries to pay minimal effective rates on US-bound medications.",
+        "mechanism": "Look up the drugs you take: see if they're made in Puerto Rico, and which company books the profits there. Pfizer, AbbVie, Lilly, BMS, Amgen, and J&J use Puerto Rican subsidiaries to pay minimal effective rates on US-bound medications.",
         "statLabel": "Of top 20 US drugs made in PR"
       },
       "desalojo": {
-        "mechanism": "Rincón, Aguadilla, Old San Juan, Vieques, Culebra. Long-term housing converts to Airbnb. Beachfront privatizes. Renters get pushed inland — or off the island entirely. Block by block, owner by owner, we're mapping who's buying and who's being pushed.",
+        "mechanism": "Rincón, Aguadilla, Old San Juan, Vieques, Culebra. Long-term housing converts to Airbnb. Beachfront privatizes. Renters get pushed inland, or off the island entirely. Block by block, owner by owner, we're mapping who's buying and who's being pushed.",
         "statLabel": "Active short-term rentals on the island"
       }
     }
   },
   "deepDive": {
     "label": "Featured investigation",
-    "title": "00 — <em>The pension raid</em>",
+    "title": "00 · <em>The pension raid</em>",
     "intro": "Look up your state, fund, or hedge firm. Public-pension exposure to the vulture funds that sued Puerto Rico's retirement system, drawn from court filings, SEC disclosures, and Delaware corporate records.",
-    "side": "Data window\n2017 — 2018 bankruptcy\nUpdates ongoing",
+    "side": "Data window\n2017-2018 bankruptcy\nUpdates ongoing",
     "shellTitle": "Public records query",
     "liveData": "Live data",
     "searchPlaceholder": "Try: Oregon, CalSTRS, Oaktree, New York…",
@@ -96,12 +96,12 @@
       "cable": {
         "name": "El Cable",
         "sub": "The Wire · live news layer",
-        "body": "A real-time feed that surfaces every news article mentioning any entity in our databases. Quién Gana becomes the place to track ongoing fights — not a campaign that goes stale, but a living archive that organizers, journalists, and researchers can return to weekly."
+        "body": "A real-time feed that surfaces every news article mentioning any entity in our databases. Quién Gana becomes the place to track ongoing fights: not a campaign that goes stale, but a living archive that organizers, journalists, and researchers can return to weekly."
       },
       "herramientas": {
         "name": "Las Herramientas",
         "sub": "The Tools · divestment toolkit",
-        "body": "Once you learn your pension is in Oaktree, you need a next step. Pre-written letters to fund trustees. Model resolutions for union locals. A tracker of which funds have divested under pressure. The piece most accountability projects skip — and the one that turns inbound traffic into actual power."
+        "body": "Once you learn your pension is in Oaktree, you need a next step. Pre-written letters to fund trustees. Model resolutions for union locals. A tracker of which funds have divested under pressure. The piece most accountability projects skip, and the one that turns inbound traffic into actual power."
       },
       "expediente": {
         "name": "Completar el Expediente",
@@ -114,11 +114,11 @@
     "label": "Who we are",
     "title": "Boricuas <em>Antifascistas.</em>",
     "p1": "<strong>We are diaspora and on-island Puerto Ricans</strong> building public-accountability infrastructure in service of decolonization. We are not a 501(c)3. We are not a think tank. We are not waiting for permission.",
-    "p2": "Quién Gana exists because the colony's extraction machinery is documented in scattered fragments — court filings here, SEC disclosures there, Hacienda registries somewhere else — but the fragments don't talk to each other. The connections only come into focus when someone insists on putting them together. We're insisting.",
+    "p2": "Quién Gana exists because the colony's extraction machinery is documented in scattered fragments (court filings here, SEC disclosures there, Hacienda registries somewhere else), but the fragments don't talk to each other. The connections only come into focus when someone insists on putting them together. We're insisting.",
     "principles": [
       {
         "title": "Public record only",
-        "body": "Every claim sources to documents anyone can verify. We don't smear — we cite."
+        "body": "Every claim sources to documents anyone can verify. We don't smear; we cite."
       },
       {
         "title": "Bilingual by default",
@@ -130,7 +130,7 @@
       },
       {
         "title": "Open to contribution",
-        "body": "Researchers, journalists, organizers, affected families — the platform is yours to extend."
+        "body": "Researchers, journalists, organizers, affected families: the platform is yours to extend."
       }
     ]
   },
@@ -151,13 +151,13 @@
       "circuit": "Which circuit?",
       "choose": "Choose one",
       "circuitOptions": [
-        "00 — Pensions",
-        "01 — Act 60 / Colonia Fiscal",
-        "02 — LUMA / Energy grid",
-        "03 — PROMESA / Debt",
-        "04 — Disaster contractors",
-        "05 — Pharma",
-        "06 — Land & displacement",
+        "00 · Pensions",
+        "01 · Act 60 / Colonia Fiscal",
+        "02 · LUMA / Energy grid",
+        "03 · PROMESA / Debt",
+        "04 · Disaster contractors",
+        "05 · Pharma",
+        "06 · Land & displacement",
         "Multiple / other"
       ],
       "role": "I am a…",
@@ -176,7 +176,7 @@
     }
   },
   "footer": {
-    "brandDesc": "A public-accountability platform built by Boricuas Antifascistas. We trace the colonial circuits that extract wealth from Puerto Rico — and we connect the people on every end of the wire.",
+    "brandDesc": "A public-accountability platform built by Boricuas Antifascistas. We trace the colonial circuits that extract wealth from Puerto Rico, and we connect the people on every end of the wire.",
     "tagline": "“La colonia paga. Wall Street cobra.”",
     "investigationsTitle": "Investigations",
     "investigations": [
