@@ -2,7 +2,13 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { Link } from "@/i18n/navigation";
+import { formatArticleDate } from "@/lib/cable";
+import { getCoverageForEntity } from "@/lib/queries/cable";
 import { getEntityBySlug, jurisdictionLabel } from "@/lib/queries/pensiones";
+
+// Reflects live DB state — admin-published investments + El Cable coverage that
+// the daily poll adds — with no redeploy (matches the circuit list pages).
+export const dynamic = "force-dynamic";
 
 export default async function EntityPage({
   params,
@@ -18,6 +24,7 @@ export default async function EntityPage({
   const t = await getTranslations("pensiones.entity");
   const { entity, investments, bondClaims } = data;
   const isHedge = entity.entityType === "hedge_fund";
+  const coverage = await getCoverageForEntity(entity.id);
 
   return (
     <main className="flex-1">
@@ -99,6 +106,32 @@ export default async function EntityPage({
                   <div className="shrink-0 font-display text-xl font-semibold tracking-[-0.02em] text-rojo">
                     {c.claimedAmountDisplay}
                   </div>
+                </li>
+              ))}
+            </ul>
+          </>
+        )}
+
+        {/* Recent coverage (El Cable) */}
+        {coverage.length > 0 && (
+          <>
+            <h2 className="mt-12 font-display text-2xl font-medium tracking-[-0.02em]">
+              {t("coverage")}
+            </h2>
+            <ul className="mt-5 divide-y divide-ink-line border-y border-ink-line">
+              {coverage.map((a) => (
+                <li key={a.id} className="py-4">
+                  <div className="font-mono text-[10px] uppercase tracking-[0.12em] text-ink-faint">
+                    {a.source} · {formatArticleDate(a.publishedAt, locale)}
+                  </div>
+                  <a
+                    href={a.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 block font-display text-lg leading-[1.3] text-ink no-underline hover:text-rojo"
+                  >
+                    {a.title}
+                  </a>
                 </li>
               ))}
             </ul>

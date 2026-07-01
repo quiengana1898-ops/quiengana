@@ -252,8 +252,21 @@
       "shell": "shell",
       "none": "No published records yet.",
       "source": "Source",
+      "coverage": "Recent coverage",
       "back": "Back to the pension raid"
     }
+  },
+  "cable": {
+    "eyebrow": "El Cable · The Wire",
+    "title": "El Cable",
+    "subtitle": "The Wire · live news layer",
+    "intro": "A running feed of news that names the actors tracked across every circuit. One wire that ties the pension funds, the contractors, and the settlers together, so the work stays current instead of going stale.",
+    "dataNote": "Source: GDELT global news index. Headlines are matched to published entities by name; every link goes to the original outlet.",
+    "back": "The infrastructure",
+    "empty": "The wire is empty right now. Once the poll runs, Puerto Rico coverage appears here.",
+    "trackedTitle": "Coverage of tracked actors",
+    "trackedEmpty": "No coverage naming a tracked entity in this window yet.",
+    "wireTitle": "Puerto Rico accountability wire"
   },
   "auth": {
     "eyebrow": "Boricuas Antifascistas",

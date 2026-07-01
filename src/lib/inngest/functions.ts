@@ -1,3 +1,4 @@
+import { runCablePoll } from "@/jobs/cable/poll";
 import { pullUsaspending } from "@/jobs/contratos/pull-usaspending";
 
 import { inngest } from "./client";
@@ -16,5 +17,20 @@ const contratosPull = inngest.createFunction(
   },
 );
 
+// El Cable news wire — daily, 07:00 UTC. Polls all sources (GDELT + Google News
+// per-fund + curated RSS); each is a public news index (every row is its own
+// citation), so this publishes on ingest and the public feed filters to
+// published-entity mentions. Inngest retries handle transient rate-limit/API blips.
+const cablePoll = inngest.createFunction(
+  {
+    id: "cable-poll",
+    name: "El Cable: poll sources",
+    triggers: [{ cron: "0 7 * * *" }],
+  },
+  async ({ step }) => {
+    return step.run("poll", () => runCablePoll({ timespan: "14days" }));
+  },
+);
+
 // Registry of all Inngest functions (served at /api/inngest).
-export const functions = [contratosPull];
+export const functions = [contratosPull, cablePoll];

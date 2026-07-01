@@ -253,8 +253,21 @@
       "shell": "pantalla",
       "none": "Aún no hay registros publicados.",
       "source": "Fuente",
+      "coverage": "Cobertura reciente",
       "back": "Volver al asalto de pensiones"
     }
+  },
+  "cable": {
+    "eyebrow": "El Cable · The Wire",
+    "title": "El Cable",
+    "subtitle": "The Wire · noticias en vivo",
+    "intro": "Un feed continuo de noticias que nombran a los actores rastreados en cada circuito. Un solo cable que conecta los fondos de pensiones, los contratistas y los colonos, para que el trabajo se mantenga al día en vez de quedar obsoleto.",
+    "dataNote": "Fuente: índice global de noticias GDELT. Los titulares se enlazan a entidades publicadas por nombre; cada enlace lleva al medio original.",
+    "back": "La infraestructura",
+    "empty": "El cable está vacío por ahora. Cuando corra el sondeo, la cobertura de Puerto Rico aparecerá aquí.",
+    "trackedTitle": "Cobertura de actores rastreados",
+    "trackedEmpty": "Aún no hay cobertura que nombre a una entidad rastreada en este periodo.",
+    "wireTitle": "Cable de rendición de cuentas de Puerto Rico"
   },
   "auth": {
     "eyebrow": "Boricuas Antifascistas",
