@@ -6,11 +6,11 @@
 
 ## Status
 
-Pre-Phase-1 scaffold. See [`SPEC.md`](./SPEC.md) for the full specification and [`CLAUDE.md`](./CLAUDE.md) for build conventions.
+Live. Phase 1 and Phase 2 are deployed: the Pensiones and Contratos circuits, the auth-gated admin + ingestion spine, and El Cable (the multi-source news wire at `/cable`). See [`SPEC.md`](./SPEC.md) for the full specification and [`CLAUDE.md`](./CLAUDE.md) for build conventions.
 
 ## Stack
 
-Next.js 15 (App Router) · TypeScript · Supabase (Postgres) · Drizzle · Tailwind v4 · shadcn/ui · next-intl · Inngest · MapLibre. Full rationale in `SPEC.md §2`.
+Next.js 16 (App Router) · TypeScript · Supabase (Postgres) · Drizzle · Tailwind v4 · shadcn/ui · next-intl · Inngest · MapLibre. Full rationale in `SPEC.md §2`.
 
 ## Getting started
 
