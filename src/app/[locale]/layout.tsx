@@ -33,9 +33,23 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://quien-gana.vercel.app"),
   title: "Quién Gana · Boricuas Antifascistas",
   description:
     "A public-accountability platform tracing the colonial circuits extracting wealth from Puerto Rico.",
+  openGraph: {
+    title: "Quién Gana",
+    description:
+      "A public-record search across the colonial circuits extracting wealth from Puerto Rico.",
+    siteName: "Quién Gana",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Quién Gana",
+    description:
+      "A public-record search across the colonial circuits extracting wealth from Puerto Rico.",
+  },
 };
 
 // Pre-render both locales at build time.
