@@ -43,12 +43,14 @@ export const metadata: Metadata = {
       "A public-record search across the colonial circuits extracting wealth from Puerto Rico.",
     siteName: "Quién Gana",
     type: "website",
+    images: [{ url: "/og.png", width: 1200, height: 630, alt: "Quién Gana" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Quién Gana",
     description:
       "A public-record search across the colonial circuits extracting wealth from Puerto Rico.",
+    images: ["/og.png"],
   },
 };
 
