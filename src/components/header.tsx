@@ -1,5 +1,6 @@
 import { useTranslations } from "next-intl";
 
+import { BrandMark } from "@/components/brand-mark";
 import { LocaleSwitcher } from "@/components/locale-switcher";
 import { Link } from "@/i18n/navigation";
 
@@ -20,11 +21,9 @@ export function Header() {
     <header className="sticky top-0 z-[100] border-b border-ink-line bg-cream/90 backdrop-blur-md">
       <div className="mx-auto flex max-w-[1240px] items-center justify-between gap-8 px-8 py-4 max-[720px]:px-5">
         <Link href="/" className="flex items-center gap-3.5 text-ink no-underline">
-          <span
-            className="block h-[38px] w-[38px] bg-celeste"
-            style={{ clipPath: "polygon(0 0, 100% 50%, 0 100%)" }}
-            aria-hidden
-          />
+          <span className="block h-[30px] w-[45px] overflow-hidden rounded-xs border border-ink-line">
+            <BrandMark className="h-full w-full" />
+          </span>
           <span className="flex flex-col">
             <span className="font-display text-[22px] font-bold italic leading-none tracking-[-0.02em]">
               Quién Gana

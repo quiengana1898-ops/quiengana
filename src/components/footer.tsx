@@ -1,5 +1,7 @@
 import { useTranslations } from "next-intl";
 
+import { BrandMark } from "@/components/brand-mark";
+
 // Dark footer with brand blurb, link columns, and the bandera mark (SPEC §7).
 export function Footer() {
   const t = useTranslations("footer");
@@ -49,11 +51,9 @@ export function Footer() {
         <div className="flex items-center justify-between pt-7 font-mono text-[11px] uppercase tracking-[0.08em] text-cream/50 max-[720px]:flex-col max-[720px]:items-start max-[720px]:gap-3">
           <div>{t("bottom")}</div>
           <div className="inline-flex items-center gap-2">
-            <span
-              className="block h-3.5 w-3.5 bg-celeste"
-              style={{ clipPath: "polygon(0 0, 100% 50%, 0 100%)" }}
-              aria-hidden
-            />
+            <span className="block h-3.5 w-[21px] overflow-hidden rounded-[2px] border border-cream/20">
+              <BrandMark className="h-full w-full" />
+            </span>
             <span>{t("flagLabel")}</span>
           </div>
         </div>
