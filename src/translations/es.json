@@ -6,14 +6,28 @@
     "investigations": "Investigaciones",
     "infrastructure": "Infraestructura",
     "about": "Quiénes somos",
-    "report": "Reporta"
+    "report": "Reporta",
+    "cable": "El Cable",
+    "home": "Inicio"
   },
   "hero": {
-    "eyebrow": "Plataforma investigativa · est. 2025",
-    "title": "La colonia tiene muchas puertas. <em>Las estamos mapeando todas.</em>",
-    "lede": "<strong>Quién Gana</strong> es una plataforma de rendición de cuentas que rastrea los circuitos coloniales que extraen riqueza de Puerto Rico: fondos de pensiones, paraísos fiscales, contratos de desastre, extracción farmacéutica, privatización energética, desplazamiento, y la maquinaria de la deuda federal. Conecta a la gente afectada en cada extremo del circuito.",
-    "ctaPrimary": "Ver las investigaciones",
-    "ctaSecondary": "Lee la tesis"
+    "eyebrow": "Rendición de cuentas · Puerto Rico",
+    "title": "¿Quién gana con la crisis de Puerto Rico? <em>Búscalos.</em>",
+    "sub": "Una búsqueda en el registro público: los contratistas, fondos buitre y firmas que extraen la riqueza de la isla. <strong>Por nombre. Por dólar.</strong>",
+    "stats": [
+      {
+        "n": "$14.8B",
+        "k": "Contratos de desastre rastreados"
+      },
+      {
+        "n": "3,000",
+        "k": "Contratos federales"
+      },
+      {
+        "n": "691",
+        "k": "Actores mapeados"
+      }
+    ]
   },
   "thesis": {
     "label": "La tesis",
@@ -66,7 +80,10 @@
         "mechanism": "Rincón, Aguadilla, Viejo San Juan, Vieques, Culebra. La vivienda a largo plazo se convierte en Airbnb. La costa se privatiza. Los inquilinos son empujados hacia adentro, o fuera de la isla. Cuadra por cuadra, dueño por dueño, mapeamos quién compra y quién es desplazado.",
         "statLabel": "Alquileres a corto plazo activos en la isla"
       }
-    }
+    },
+    "heading": "Las investigaciones",
+    "lookup": "Buscar →",
+    "browse": "Explorar →"
   },
   "deepDive": {
     "label": "Investigación destacada",
@@ -200,7 +217,13 @@
       "Fuentes"
     ],
     "connectTitle": "Conecta",
-    "connect": ["Signal", "Mastodon", "Boletín", "Prensa", "Contribuye"],
+    "connect": [
+      "Signal",
+      "Mastodon",
+      "Boletín",
+      "Prensa",
+      "Contribuye"
+    ],
     "bottom": "Hecho por Boricuas Antifascistas · ¡Patria o muerte!",
     "flagLabel": "Bandera Boricua · color original"
   },
@@ -280,5 +303,33 @@
     "sent": "Enlace enviado",
     "checkEmail": "Revisa {email} para el enlace de acceso.",
     "error": "Algo salió mal. Intenta de nuevo."
+  },
+  "search": {
+    "placeholder": "Busca un contratista, fondo o firma…",
+    "loading": "…",
+    "none": "Sin resultados aún. Prueba el nombre de un fondo, contratista o firma.",
+    "try": "Prueba",
+    "kind": {
+      "contractor": "Contratista",
+      "hedgeFund": "Fondo buitre",
+      "pensionFund": "Fondo de pensiones",
+      "government": "Gobierno",
+      "corporation": "Corporación",
+      "individual": "Individuo",
+      "pharma": "Farmacéutica",
+      "union": "Sindicato",
+      "propertyOwner": "Propietario",
+      "other": "Actor"
+    }
+  },
+  "chyron": {
+    "label": "El Cable · En vivo",
+    "aria": "Lo último del cable"
+  },
+  "involved": {
+    "title": "¿Ves la máquina <em>desde adentro?</em>",
+    "intro": "Un fiduciario de pensiones, un inquilino desplazado, un periodista con un documento. Las conexiones solo se ven cuando alguien las junta.",
+    "report": "Reporta lo que ves",
+    "join": "Únete a la lista"
   }
 }

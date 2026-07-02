@@ -5,14 +5,28 @@
     "investigations": "Investigations",
     "infrastructure": "Infrastructure",
     "about": "About",
-    "report": "Report"
+    "report": "Report",
+    "cable": "El Cable",
+    "home": "Home"
   },
   "hero": {
-    "eyebrow": "An investigative platform · est. 2025",
-    "title": "The colony has many doors. <em>We're mapping them all.</em>",
-    "lede": "<strong>Quién Gana</strong> is a public-accountability platform that traces the colonial circuits moving wealth out of Puerto Rico: pension raids, tax havens, disaster contracts, pharmaceutical extraction, energy privatization, real-estate displacement, and the federal debt machinery itself. It connects the people on every end of the wire.",
-    "ctaPrimary": "See the investigations",
-    "ctaSecondary": "Read the thesis"
+    "eyebrow": "Public accountability · Puerto Rico",
+    "title": "Who profits from Puerto Rico's crisis? <em>Look them up.</em>",
+    "sub": "A search across the public record: the contractors, vulture funds, and firms pulling wealth out of the island. <strong>By name. By dollar.</strong>",
+    "stats": [
+      {
+        "n": "$14.8B",
+        "k": "Disaster contracts traced"
+      },
+      {
+        "n": "3,000",
+        "k": "Federal contracts"
+      },
+      {
+        "n": "691",
+        "k": "Actors mapped"
+      }
+    ]
   },
   "thesis": {
     "label": "The thesis",
@@ -65,7 +79,10 @@
         "mechanism": "Rincón, Aguadilla, Old San Juan, Vieques, Culebra. Long-term housing converts to Airbnb. Beachfront privatizes. Renters get pushed inland, or off the island entirely. Block by block, owner by owner, we're mapping who's buying and who's being pushed.",
         "statLabel": "Active short-term rentals on the island"
       }
-    }
+    },
+    "heading": "The investigations",
+    "lookup": "Look up →",
+    "browse": "Browse →"
   },
   "deepDive": {
     "label": "Featured investigation",
@@ -199,7 +216,13 @@
       "Sources"
     ],
     "connectTitle": "Connect",
-    "connect": ["Signal", "Mastodon", "Newsletter", "Press", "Contribute"],
+    "connect": [
+      "Signal",
+      "Mastodon",
+      "Newsletter",
+      "Press",
+      "Contribute"
+    ],
     "bottom": "Built by Boricuas Antifascistas · ¡Patria o muerte!",
     "flagLabel": "Bandera Boricua · color original"
   },
@@ -279,5 +302,33 @@
     "sent": "Link sent",
     "checkEmail": "Check {email} for a sign-in link.",
     "error": "Something went wrong. Try again."
+  },
+  "search": {
+    "placeholder": "Search a contractor, fund, or firm…",
+    "loading": "…",
+    "none": "No matches yet. Try a fund, contractor, or firm name.",
+    "try": "Try",
+    "kind": {
+      "contractor": "Contractor",
+      "hedgeFund": "Vulture fund",
+      "pensionFund": "Pension fund",
+      "government": "Government",
+      "corporation": "Corporation",
+      "individual": "Individual",
+      "pharma": "Pharma",
+      "union": "Union",
+      "propertyOwner": "Property owner",
+      "other": "Actor"
+    }
+  },
+  "chyron": {
+    "label": "El Cable · Live",
+    "aria": "Latest from the wire"
+  },
+  "involved": {
+    "title": "Seeing the machine <em>from the inside?</em>",
+    "intro": "A pension trustee, a displaced renter, a journalist with a document. The connections only come into focus when someone puts them together.",
+    "report": "Report what you're seeing",
+    "join": "Join the list"
   }
 }

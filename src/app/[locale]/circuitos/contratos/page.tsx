@@ -9,10 +9,13 @@ export const dynamic = "force-dynamic";
 
 export default async function ContratosPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ locale: string }>;
+  searchParams: Promise<{ q?: string }>;
 }) {
   const { locale } = await params;
+  const { q } = await searchParams;
   setRequestLocale(locale);
   const t = await getTranslations("contratos");
 
@@ -51,7 +54,7 @@ export default async function ContratosPage({
               {t("empty")}
             </p>
           ) : (
-            <ContractBrowser rows={rows} />
+            <ContractBrowser rows={rows} initialQuery={q ?? ""} />
           )}
         </div>
       </section>

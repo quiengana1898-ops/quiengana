@@ -94,3 +94,18 @@ export async function getCoverageForEntity(
 
   return rows.map((r) => ({ ...r, mentions: [] }));
 }
+
+/** Lightweight recent headlines for the homepage chyron. */
+export async function getWireHeadlines(
+  limit = 12,
+): Promise<{ title: string; url: string; source: string }[]> {
+  return db
+    .select({
+      title: newsArticles.title,
+      url: newsArticles.url,
+      source: newsArticles.source,
+    })
+    .from(newsArticles)
+    .orderBy(desc(newsArticles.publishedAt))
+    .limit(limit);
+}

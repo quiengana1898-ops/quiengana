@@ -1,12 +1,12 @@
 import { setRequestLocale } from "next-intl/server";
 
-import { About } from "@/components/home/about";
+import { Chyron } from "@/components/home/chyron";
 import { Circuits } from "@/components/home/circuits";
-import { DeepDive } from "@/components/home/deep-dive";
 import { Hero } from "@/components/home/hero";
-import { Infrastructure } from "@/components/home/infrastructure";
-import { Intake } from "@/components/home/intake";
-import { Thesis } from "@/components/home/thesis";
+import { Involved } from "@/components/home/involved";
+
+// The chyron reads the live wire, so render on demand.
+export const dynamic = "force-dynamic";
 
 export default async function Home({
   params,
@@ -17,14 +17,13 @@ export default async function Home({
   setRequestLocale(locale);
 
   return (
-    <main className="flex-1">
-      <Hero />
-      <Thesis />
-      <Circuits />
-      <DeepDive />
-      <Infrastructure />
-      <About />
-      <Intake />
-    </main>
+    <>
+      <Chyron />
+      <main className="flex-1">
+        <Hero />
+        <Circuits />
+        <Involved />
+      </main>
+    </>
   );
 }

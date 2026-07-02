@@ -6,9 +6,15 @@ import { useTranslations } from "next-intl";
 import { type ContractRow, usdCompact } from "@/lib/contratos";
 
 // Instant client-side browse over published PR contracts (search contractor/agency).
-export function ContractBrowser({ rows }: { rows: ContractRow[] }) {
+export function ContractBrowser({
+  rows,
+  initialQuery = "",
+}: {
+  rows: ContractRow[];
+  initialQuery?: string;
+}) {
   const t = useTranslations("contratos.browser");
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(initialQuery);
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase();
